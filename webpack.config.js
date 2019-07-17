@@ -1,5 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var Path = require('path');
 var Webpack = require('webpack');
 
@@ -21,6 +22,7 @@ module.exports = {
     },
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
+        new VueLoaderPlugin(),
     ].concat(cssFiles.map(function (name) {
         return new MiniCssExtractPlugin({
             filename: name + '.css'
@@ -40,7 +42,16 @@ module.exports = {
                     'css-loader',
                 ],
             },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
         ]
+    },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
     },
     devServer: {
         hot: true,
