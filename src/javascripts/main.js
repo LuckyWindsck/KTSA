@@ -23,20 +23,22 @@ const routes = [
 const router = new VueRouter({ routes });
 
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * Comments refer to https://github.com/laravel-shift/laravel-5.8/blob/master/resources/js/app.js#L11
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Recursively scan this directory for the Vue components and automatically
+ * register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example></example>
  */
-
 const files = require.context('./', true, /\.vue$/i);
-files.keys().map(key => Vue.component(
-  (str => str[0].toLowerCase() + str.slice(1).replace(/[A-Z]/g, match => `-${match.toLowerCase()}`))(key.split('/').pop().split('.')[0]),
-  files(key).default,
-));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+files.keys().forEach((key) => {
+  Vue.component(
+    key.replace(/(\.\/components\/)(.*)Component\.vue/, '$2') // Get the component name
+      .replace(/(.[A-Z]*)([A-Z])/g, '$1-$2') // Convert to kebab-case
+      .toLowerCase(), // Conver to lowercase
+    files(key).default,
+  );
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
