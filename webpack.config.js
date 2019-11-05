@@ -56,7 +56,8 @@ module.exports = {
     devServer: {
         hot: true,
         open: true,
-        openPage: './index.html',
+        openPage: '',
+        port: 8080,
         watchContentBase: true
     }
 };
