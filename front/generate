@@ -1,0 +1,150 @@
+#!/bin/bash
+
+reset="\033[0m"
+
+function b() { # bold
+  echo -e "\033[1m${*}${reset}"
+}
+
+function u() { # underline
+  echo -e "\033[4m${*}${reset}"
+}
+
+program=${0##*/}
+margins=$(echo "${program//[a-zA-Z0-9]/ }")
+program=$(b ${program})
+read -r -d '' usage << EOF
+  ${program} [-$(b h), --$(b help)] [-$(b n), --$(b dry-run)]
+  ${margins} [-$(b p), --$(b prefix) $(u PREFIX)] [-$(b s), --$(b suffix) $(u SUFFIX)]
+  ${margins} [-$(b d), --$(b destination) $(u DESTINATION)] [-$(b t) --$(b template) $(u TEMPLATE)] [$(u file) $(u ...)]
+EOF
+
+function help_and_exit() {
+  cat << EOF
+$(b Usage)
+  ${usage}
+EOF
+  exit
+}
+
+function man_and_exit() {
+  margins=${0##*/}
+  margins=$(echo "${margins//[a-zA-Z0-9]/ }")
+  cat << EOF
+$(b NAME)
+  ${program} -- generate file with optional template
+
+$(b STNOPSIS)
+  ${usage}
+
+$(b DESCRIPTION)
+  The ${program} utility is used to generate $(u file\(s\)) with $(u PREFIX) and $(u SUFFIX) by using $(u TEMPLATE) in $(u DESTINATION) directory
+
+  By defualt, ${program} use $(b touch) command to create empty $(u file\(s\)) and save it in the current directory.
+
+  The following options are available:
+
+  -$(b d), --$(b destination) $(u DESTINATION)
+      Specify the $(u DESTINATION) directory for saving $(u file\(s\)).
+
+  -$(b h), --$(b help)
+      Print a brief help message.
+
+  -$(b n), --$(b dry-run)
+      Don't actually do anything, just show what would be done.
+
+  -$(b p), --$(b prefix) $(u PREFIX)
+      The $(u PREFIX) used to form $(u file\(s\)) name.
+
+  -$(b s), --$(b suffix) $(u SUFFIX)
+      The $(u SUFFIX) used to form $(u file\(s\)) name.
+
+  -$(b t) --$(b template) $(u TEMPLATE)
+      Specify the $(u TEMPLATE) file used for creating $(u file\(s\)) using $(b cat) command.
+
+EOF
+  exit
+}
+
+files=()
+destination=""
+template=""
+prefix=""
+suffix=""
+dry_run="false"
+
+error=$(echo -e "\033[31mError${reset}")
+
+function file_exist?() {
+  if [[ ! -e ${1} ]]; then
+    echo "${error}: $(u ${1}) does not exist"
+    exit 1
+  fi
+}
+
+function type_check() {
+  case ${1} in
+    -d) incorrect_type="file"; correct_type="directory" ;;
+    -f) incorrect_type="directory"; correct_type="file";;
+  esac
+  if [[ ${1} == "-f" && ! -f ${2} ]] || [[ ${1} == "-d" && ! -d ${2} ]]; then
+    echo "${error}: $(u ${2}) is a $incorrect_type, please provide a $correct_type"
+    exit 1
+  fi
+}
+
+function invalid_option() {
+  echo "${error}: invalid option: ${1}"
+  exit 1
+}
+
+while [[ ${#} > 0 ]]; do
+  case ${1} in
+    -d|--destination)
+      destination="${2}"
+      file_exist? ${destination}
+      type_check -d ${destination}
+      shift
+    ;;
+    -h|--help)
+      help_and_exit
+    ;;
+    -n|--dry-run)
+      dry_run="true"
+    ;;
+    -p|--prefix)
+      prefix="${2}"
+      shift
+    ;;
+    -s|--suffix)
+      suffix="${2}"
+      shift
+    ;;
+    -t|--template)
+      template="${2}"
+      file_exist? ${template}
+      type_check -f ${template}
+      shift
+    ;;
+    -*)
+      invalid_option ${1}
+    ;;
+    *)
+      files+=(${1})
+    ;;
+  esac
+  shift
+done
+
+[[ ${#files[@]} == 0 ]] && man_and_exit
+
+for file in ${files[@]}; do
+  filepath="${destination:-.}/${prefix}${file}${suffix}"
+  command=""
+  if [[ ${template} == "" ]]; then
+    command="touch ${filepath}"
+  else
+    command="cat ${template} > ${filepath}"
+  fi
+  [[ ${dry_run} == "true" ]] && echo ${command} || eval ${command}
+done

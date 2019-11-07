@@ -1,0 +1,26 @@
+{
+  "slide": {
+    "time": 3000
+  },
+  "ktsa": {
+    "contact": {
+      "facebook": "https://www.facebook.com/keiotaiwan/",
+      "mail": "keiotaiwaneseofficial@gmail.com",
+      "twitter": "https://twitter.com/keiotaiwan/"
+    }
+  },
+  "campus": {
+    "mita": {
+      "address": "",
+      "url": ""
+    },
+    "hiyoshi": {
+      "address": "",
+      "url": ""
+    },
+    "sfc": {
+      "address": "",
+      "url": "https://www.sfc.keio.ac.jp/"
+    }
+  }
+}

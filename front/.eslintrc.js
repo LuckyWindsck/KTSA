@@ -16,6 +16,7 @@ module.exports = {
   },
   rules: {
     'func-names': 0,
+    'max-len': ['error', { code: 100 }],
     'no-console': 0,
     'no-param-reassign': 0,
     'no-plusplus': 0,

@@ -1,28 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import setting from '../config/setting.json';
+import images from '../config/images';
 import Plugin from './plugins/plugin';
 
 // Globally import modules
 const modules = [
   ['$setting', setting],
+  ['$images', images],
 ];
 modules.forEach(([prop, value]) => {
   Object.defineProperty(Vue.prototype, prop, { value });
 });
-
-// Use plugin
-Vue.use(Plugin);
-
-Vue.use(VueRouter);
-
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
-];
-const router = new VueRouter({ routes });
 
 /**
  * Comments refer to https://github.com/laravel-shift/laravel-5.8/blob/master/resources/js/app.js#L11
@@ -40,6 +29,34 @@ files.keys().forEach((key) => {
       .toLowerCase(), // Conver to lowercase
     files(key).default,
   );
+});
+
+// Use plugin
+Vue.use(Plugin);
+
+Vue.use(VueRouter);
+
+const routeComponents = [
+  'home',
+  'news',
+  'about-us',
+  'members',
+  'events',
+  'campus',
+  'contact',
+];
+const routeAliases = [
+  ['home', '/'],
+];
+const routes = routeComponents.map(component => (
+  { path: `/${component}`, component: Vue.options.components[component] }
+));
+routeAliases.forEach(([component, alias]) => {
+  Object.assign(routes[routes.map(e => e.path.slice(1)).indexOf(component)], { alias });
+});
+const router = new VueRouter({
+  mode: 'history',
+  routes,
 });
 
 // Creating the Vue application instance
