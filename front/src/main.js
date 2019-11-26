@@ -1,32 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import setting from '../config/setting.json';
-import Plugin from './plugins/plugin';
+import setting from './config/setting.json';
+import images from './config/images';
+import routes from './config/routes';
+import plugin from './plugins/plugin';
 
 // Globally import modules
 const modules = [
   ['$setting', setting],
+  ['$images', images],
 ];
 modules.forEach(([prop, value]) => {
   Object.defineProperty(Vue.prototype, prop, { value });
 });
 
-// Use plugin
-Vue.use(Plugin);
-
-Vue.use(VueRouter);
-
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
-];
-const router = new VueRouter({ routes });
-
 /**
- * Comments refer to https://github.com/laravel-shift/laravel-5.8/blob/master/resources/js/app.js#L11
- *
  * Recursively scan this directory for the Vue components and automatically
  * register them with their "basename".
  *
@@ -36,10 +24,20 @@ const files = require.context('./', true, /\.vue$/i);
 files.keys().forEach((key) => {
   Vue.component(
     key.replace(/(\.\/components\/)(.*)Component\.vue/, '$2') // Get the component name
-      .replace(/(.[A-Z]*)([A-Z])/g, '$1-$2') // Convert to kebab-case
-      .toLowerCase(), // Conver to lowercase
+      .replace(/([a-z])([A-Z])/g, '$1-$2') // Convert to kebab-case
+      .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
+      .toLowerCase(), // Convert to lowercase
     files(key).default,
   );
+});
+
+// Use plugin
+const plugins = [plugin, VueRouter];
+plugins.forEach(p => Vue.use(p));
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: routes(),
 });
 
 // Creating the Vue application instance
