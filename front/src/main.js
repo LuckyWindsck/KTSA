@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import setting from './config/setting.json';
+// TODO: solve the problem when not using file extension
+import news from './posts/news';
 import images from './config/images';
 import routes from './config/routes';
 import plugin from './plugins/plugin';
@@ -8,6 +10,7 @@ import plugin from './plugins/plugin';
 // Globally import modules
 const modules = [
   ['$setting', setting],
+  ['$news', news],
   ['$images', images],
 ];
 modules.forEach(([prop, value]) => {
