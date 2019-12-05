@@ -5,42 +5,42 @@ const component = name => Vue.options.components[name];
 export default () => [
   {
     path: '/',
-    component: component('ktsa-layout'),
+    component: component('the-index'),
     children: [
       {
         path: 'home',
-        component: component('home'),
+        component: component('the-home'),
         alias: '/',
       },
       {
         path: 'news',
-        component: component('news'),
+        component: component('the-news'),
       },
       {
         path: 'about-us',
-        component: component('about-us'),
+        component: component('the-about-us'),
       },
       {
         path: 'members',
-        component: component('members'),
+        component: component('the-members'),
       },
       {
         path: 'events',
-        component: component('events'),
+        component: component('the-events'),
       },
       {
         path: 'campus',
-        component: component('campus'),
+        component: component('the-campus'),
       },
       {
         path: 'contact',
-        component: component('contact'),
+        component: component('the-contact'),
       },
     ],
   },
   {
     path: '/admin',
-    component: component('ktsa-admin'),
+    component: component('the-admin'),
   },
   {
     path: '*',

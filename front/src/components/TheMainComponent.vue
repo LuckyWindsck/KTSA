@@ -1,6 +1,6 @@
 <template lang="pug">
   main
-    ktsa-nav.ktsa-KTSAMain_Navigation
+    the-nav.ktsa-KTSAMain_Navigation
     router-view.ktsa-KTSAMain_RouterView
 </template>
 

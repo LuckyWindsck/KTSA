@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    ktsa-header
-    ktsa-main.ktsa-KTSALayout_Main
-    ktsa-footer.ktsa-KTSALayout_Footer
+    the-header
+    the-main.ktsa-KTSALayout_Main
+    the-footer.ktsa-KTSALayout_Footer
 </template>
 
 <style scoped>

@@ -1,15 +1,13 @@
 <template lang="pug">
   section.ktsa-KTSAHome
     section.ktsa-KTSAHome_Main
-      slideshow.ktsa-KTSAHome_SlideShow
-      home-news.ktsa-KTSAHome_HomeNews
-    ktsa-aside.ktsa-KTSAHome_Aside
+      the-home-slideshow.ktsa-KTSAHome_SlideShow
+      the-home-news.ktsa-KTSAHome_HomeNews
+    the-aside.ktsa-KTSAHome_Aside
 </template>
 
 <style scoped>
 .ktsa-KTSAHome {
-  grid-column: span 9;
-
   display: grid;
   grid-template-columns: 7fr 2fr;
   grid-column-gap: 1rem;
