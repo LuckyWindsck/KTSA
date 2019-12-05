@@ -111,6 +111,7 @@ export default {
       this.showSlides(this.slideIndex);
     },
     showSlides(n) {
+      clearInterval(this.timer);
       const slides = Array.from(
         document.getElementsByClassName("ktsa-Slideshow_Slides")
       );
@@ -125,11 +126,11 @@ export default {
 
       slides[this.slideIndex].style.setProperty("display", "block");
       dots[this.slideIndex].classList.add("active");
+      this.timer = setTimeout(this.plusSlides, this.$setting.slide.time, 1);
     }
   },
   mounted() {
     this.showSlides(this.slideIndex);
-    // this.timer = setInterval(this.plusSlides, this.$setting.slide.time, 1);
   }
 };
 </script>
