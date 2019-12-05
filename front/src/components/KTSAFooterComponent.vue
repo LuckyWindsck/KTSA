@@ -29,6 +29,7 @@
 
   display: grid;
   grid-template-columns: repeat(25, 1fr);
+  /* Chrome Warning: Deprecate percentage */
   grid-template-rows: repeat(21, calc(100% / (525 / 25)));
 }
 .ktsa-KTSAFooter_Contact a {
