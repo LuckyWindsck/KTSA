@@ -1,7 +1,7 @@
 <template lang="pug">
   aside
     div.ktsa-KTSAAside_LogoFrame
-      div.ktsa-KTSAAside_Logo(:style="{'background-image': 'url(' + this.$images.HOME.Logo + ')'}")
+      img.ktsa-KTSAAside_Logo(:src="this.$images.HOME.Logo")
     div.ktsa-KTSAAside_Content
       h1
         span Keio Taiwanese
@@ -18,14 +18,28 @@
 <style>
 .ktsa-KTSAAside_LogoFrame {
   display: table-row;
+  float: left;
+  margin: 0.5rem;
+  overflow: hidden;
+}
+/* To make a square */
+.ktsa-KTSAAside_LogoFrame::before {
+  content: "";
+  float: left;
+  padding-top: 100%;
 }
 .ktsa-KTSAAside_Logo {
-  position: relative;
-  margin: 0.5rem auto 0;
-  height: calc(100vw / 6 - 2rem);
-  width: calc(100vw / 6 - 2rem);
-  background-position: center;
-  background-size: 300%;
+  width: 100%;
+
+  /* TODO: refactor */
+  /* 
+  2 / 12: grid
+  638 / 1063: size ratio
+  (1 - (638 / 1063)): size increased by pseudo element
+  1 / 2: half
+   */
+  transform: translateY(calc((2 / 12) * (1 - (638 / 1063)) * (1 / 2) * 100vw))
+    matrix(3, 0, 0, 3, 0, 0);
 }
 .ktsa-KTSAAside_Content {
   display: table-row;
