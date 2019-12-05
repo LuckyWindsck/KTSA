@@ -7,7 +7,7 @@
       a.ktsa-Slideshow_Next(@click="plusSlides(1)") &#10095;
     div.ktsa-Slideshow_Menu
       div.ktsa-Slideshow_Caption {{ this.slides[slideIndex][0] }}
-      span.dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
+      span.ktsa-Slideshow_Dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
 </template>
 
 <style>
@@ -58,7 +58,7 @@
   font-size: 1.5rem;
   margin-left: 1em;
 }
-.dot {
+.ktsa-Slideshow_Dot {
   margin: 0 2px;
   border-radius: 50%;
 
@@ -74,7 +74,7 @@
 }
 
 .active,
-.dot:hover {
+.ktsa-Slideshow_Dot:hover {
   background-color: var(--KTSA-fg-blue);
 }
 </style>
@@ -114,7 +114,9 @@ export default {
       const slides = Array.from(
         document.getElementsByClassName("ktsa-Slideshow_Slides")
       );
-      const dots = Array.from(document.getElementsByClassName("dot"));
+      const dots = Array.from(
+        document.getElementsByClassName("ktsa-Slideshow_Dot")
+      );
 
       this.slideIndex = (this.slideIndex + slides.length) % slides.length;
 
