@@ -53,13 +53,6 @@ module.exports = {
             'user-select': 'none',
           };
         },
-        ktsa_search() {
-          return {
-            padding: '0',
-            border: `0.1rem solid ${variables['--KTSA-fg-blue']}`,
-            'border-radius': '0.5rem',
-          };
-        },
       },
     },
     precss: {},

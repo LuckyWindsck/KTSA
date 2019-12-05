@@ -10,9 +10,6 @@
         a(href="") Privacy Policy
       div.ktsa-KTSAFooter_SitePolicy
         a(href="") Site Policy
-      div.ktsa-KTSAFooter_Search
-        input.ktsa-KTSAFooter_SearchBox(type="text")
-        button.ktsa-KTSAFooter_SearchButton Search
 </template>
 
 <style scoped>
@@ -61,32 +58,6 @@
   grid-row: 13 / span 2;
 
   @mixin vertical_align_center;
-}
-.ktsa-KTSAFooter_Search {
-  grid-column: 12 / span 10;
-  grid-row: 10 / span 3;
-
-  @mixin vertical_align_center;
-  justify-content: space-evenly;
-}
-.ktsa-KTSAFooter_SearchBox {
-  height: calc(100% * 2 / 3);
-  width: 75%;
-
-  @mixin ktsa_search;
-  box-shadow: inset 0 0.25rem 0.25rem 0 var(--KTSA-bg-blue);
-}
-.ktsa-KTSAFooter_SearchButton {
-  height: calc(100% * 2 / 3);
-  width: 20%;
-
-  @mixin ktsa_search;
-  box-shadow: inset 0 0.25rem 0.25rem 0 rgba(255, 255, 255, 0.3);
-
-  background-color: var(--KTSA-fg-blue);
-
-  color: white;
-  font-size: 1.5vw;
 }
 </style>
 
