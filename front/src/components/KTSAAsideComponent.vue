@@ -11,8 +11,10 @@
       a(:href="this.$setting.campus.hiyoshi.url") 日吉
       a(:href="this.$setting.campus.sfc.url") 湘南藤沢
     section.ktsa-KTSAAside_SNS
-      a(:href="this.$setting.ktsa.contact.twitter") twi @keiotaiwan
-      a(:href="this.$setting.ktsa.contact.facebook") fbk @keiotaiwan
+      a(:href="this.$setting.ktsa.contact.line")
+        img.ktsa-KTSAAside_Line(:src="this.$images.HOME['line-zh_tw']")
+      a(:href="this.$setting.ktsa.contact.facebook")
+        img.ktsa-KTSAAside_Facebook(:src="this.$images.HOME['fb-zh_tw']")
 </template>
 
 <style>
@@ -45,7 +47,6 @@
   display: table-row;
 }
 .ktsa-KTSAAside_Campus {
-  display: table-row;
   padding: 1rem 0;
   line-height: 1.5em;
   font-size: 1.5rem;
@@ -54,13 +55,44 @@
   flex-direction: column;
 }
 .ktsa-KTSAAside_SNS {
-  display: table-row;
-  padding: 1rem 0;
+  padding: 0 1rem;
   line-height: 1.5em;
   font-size: 1.25rem;
 
   @mixin vertical_align_center;
   flex-direction: column;
+}
+.ktsa-KTSAAside_Line {
+  width: 100%;
+
+  /* https://bennettfeely.com/clippy/
+  Shape: Bevel */
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+.ktsa-KTSAAside_Facebook {
+  width: 100%;
+
+  /* https://bennettfeely.com/clippy/
+  Shape: Bevel */
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
 }
 </style>
 
