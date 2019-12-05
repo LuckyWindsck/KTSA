@@ -10,7 +10,7 @@
       span.ktsa-Slideshow_Dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
 </template>
 
-<style>
+<style scoped>
 .ktsa-Slideshow_Container {
   max-width: 1000px;
   position: relative;

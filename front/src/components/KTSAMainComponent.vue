@@ -4,7 +4,7 @@
     router-view.ktsa-KTSAMain_RouterView
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSAMain_Navigation {
   @mixin ktsa_section;
   grid-column: 1;

@@ -5,7 +5,7 @@
     ktsa-footer.ktsa-KTSALayout_Footer
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSALayout_Main {
   position: relative;
   z-index: 1;

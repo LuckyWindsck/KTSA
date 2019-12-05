@@ -2,7 +2,7 @@
   div Contact
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

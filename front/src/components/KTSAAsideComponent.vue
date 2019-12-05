@@ -17,7 +17,7 @@
         img.ktsa-KTSAAside_Facebook(:src="this.$images.HOME['fb-zh_tw']")
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSAAside_LogoFrame {
   display: table-row;
   float: left;

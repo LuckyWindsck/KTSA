@@ -2,7 +2,7 @@
   div Campus
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

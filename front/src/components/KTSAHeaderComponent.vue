@@ -3,7 +3,7 @@
     img.ktsa-KTSAHeader_CoverPhoto( :src="this.$images.LAYOUT.CoverPhoto", alt="KTSA cover photo")
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSAHeader_CoverPhoto {
   width: 100vw;
   display: block;

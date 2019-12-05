@@ -2,7 +2,7 @@
   div login
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

@@ -6,7 +6,7 @@
     ktsa-aside.ktsa-KTSAHome_Aside
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSAHome {
   grid-column: span 9;
 

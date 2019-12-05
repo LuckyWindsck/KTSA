@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .aligner {
   display: flex;
   align-items: center;

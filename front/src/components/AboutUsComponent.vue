@@ -2,7 +2,7 @@
   div About Us
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

@@ -2,7 +2,7 @@
   div Events
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

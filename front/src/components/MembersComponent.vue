@@ -2,7 +2,7 @@
   div Members
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

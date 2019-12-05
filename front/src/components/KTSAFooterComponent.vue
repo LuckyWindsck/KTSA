@@ -15,7 +15,7 @@
         button.ktsa-KTSAFooter_SearchButton Search
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSAFooter_Watermark {
   grid-column: 1;
 

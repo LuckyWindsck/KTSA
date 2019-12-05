@@ -3,6 +3,7 @@
 </template>
 
 <style>
+/* Global style */
 body {
   margin: 0;
 }
@@ -10,6 +11,9 @@ body {
 figure {
   margin: 0;
 }
+</style>
+
+<style scoped>
 </style>
 
 <script>

@@ -2,7 +2,7 @@
   div Home News
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>

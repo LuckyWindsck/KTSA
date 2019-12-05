@@ -18,7 +18,7 @@
       router-link(to='/admin').ktsa-KTSANav_Admin ADMIN
 </template>
 
-<style>
+<style scoped>
 .ktsa-KTSANav_Row {
   display: table-row;
 
