@@ -2,7 +2,7 @@
   section
     div.ktsa-Slideshow_Container
       div.ktsa-Slideshow_Slides(v-for="([name, src], i) in this.slides", :key="i")
-        img(:src="src")
+        img.ktsa-Slideshow_SlideImage(:src="src")
       a.ktsa-Slideshow_Prev(@click="plusSlides(-1)") &#10094;
       a.ktsa-Slideshow_Next(@click="plusSlides(1)") &#10095;
     div.ktsa-Slideshow_Menu
@@ -18,6 +18,11 @@
 .ktsa-Slideshow_Slides {
   display: none;
 
+  /* use grid to calculate width and height */
+  /* width : height = 1 : 2 */
+  width: calc(7 / 12 * 100vw);
+  height: calc(3.5 / 12 * 100vw);
+  overflow: hidden;
   animation-name: fade;
   animation-duration: 1.5s;
 }
@@ -29,9 +34,9 @@
     opacity: 1;
   }
 }
-.ktsa-Slideshow_Slides img {
+.ktsa-Slideshow_SlideImage {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 .ktsa-Slideshow_Prev,
 .ktsa-Slideshow_Next {
