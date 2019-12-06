@@ -1,10 +1,10 @@
 <template lang="pug">
   header
-    img.ktsa-KTSAHeader_CoverPhoto( :src="this.$images.LAYOUT.CoverPhoto", alt="KTSA cover photo")
+    img.cover-photo( :src="this.$images.LAYOUT.CoverPhoto", alt="KTSA cover photo")
 </template>
 
 <style scoped>
-.ktsa-KTSAHeader_CoverPhoto {
+.cover-photo {
   width: 100vw;
   display: block;
 }

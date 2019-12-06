@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import setting from './config/setting.json';
+import setting from './config/setting';
 // TODO: solve the problem when not using file extension
 import news from './posts/news';
 import images from './config/images';
@@ -10,6 +10,7 @@ import plugin from './plugins/plugin';
 // Globally import modules
 const modules = [
   ['$setting', setting],
+  ['$locale', setting.locale],
   ['$news', news],
   ['$images', images],
 ];
@@ -21,12 +22,13 @@ modules.forEach(([prop, value]) => {
  * Recursively scan this directory for the Vue components and automatically
  * register them with their "basename".
  *
+ * Eg. ./components/Example.vue -> <example></example>
  * Eg. ./components/ExampleComponent.vue -> <example></example>
  */
 const files = require.context('./', true, /\.vue$/i);
 files.keys().forEach((key) => {
   Vue.component(
-    key.replace(/(\.\/components\/)(.*)Component\.vue/, '$2') // Get the component name
+    key.replace(/.*\/(.*?)((Component)?)\.vue/, '$1') // Get the component name
       .replace(/([a-z])([A-Z])/g, '$1-$2') // Convert to kebab-case
       .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
       .toLowerCase(), // Convert to lowercase

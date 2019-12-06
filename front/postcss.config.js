@@ -14,12 +14,6 @@ module.exports = {
     'postcss-css-variables': { variables },
     'postcss-mixins': {
       mixins: {
-        vertical_align_center() {
-          return {
-            display: 'flex',
-            'align-items': 'center',
-          };
-        },
         ktsa_section() {
           return {
             border: `0.25rem solid ${variables['--KTSA-fg-blue']}`,
@@ -35,22 +29,6 @@ module.exports = {
             'list-style-position': 'inside',
             'line-height': '3em',
             'font-size': '1.5rem',
-          };
-        },
-        ktsa_aside_arrow() {
-          return {
-            width: 'auto',
-            position: 'absolute',
-            top: '50%',
-            padding: '16px',
-            'border-radius': '0 3px 3px 0',
-            'margin-top': '-22px',
-            color: 'white',
-            'font-weight': 'bold',
-            'font-size': '18px',
-            transition: '0.6s ease',
-            cursor: 'pointer',
-            'user-select': 'none',
           };
         },
       },

@@ -3,7 +3,7 @@
     div
       span ・NEWS
       //- span Learn More >>>
-    div.ktsa-HomeNews_NewsColumn(v-for="({time, title, image}, i) in this.$news", :key="i")
+    div(v-for="({time, title, image}, i) in this.$news", :key="i")
       article
         p {{ time }}
         img(:src="image")

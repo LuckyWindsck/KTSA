@@ -1,12 +1,13 @@
 <template lang="pug">
   div
     the-header
-    the-main.ktsa-KTSALayout_Main
-    the-footer.ktsa-KTSALayout_Footer
+    the-main.main
+    the-footer.footer
 </template>
 
 <style scoped>
-.ktsa-KTSALayout_Main {
+.main {
+  /* For watermark in the-footer */
   position: relative;
   z-index: 1;
 
@@ -17,16 +18,14 @@
   display: grid;
   grid-template-columns: 3fr 9fr;
   grid-column-gap: 1rem;
-
-  overflow: visiblw;
 }
-.ktsa-KTSALayout_Footer {
-  height: 50vmin;
+.footer {
+  padding: 2.5em;
 
   background-color: var(--KTSA-bg-blue);
-
-  display: grid;
-  grid-template-columns: 7fr 17fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
 

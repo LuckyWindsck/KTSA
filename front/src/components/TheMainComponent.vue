@@ -1,20 +1,20 @@
 <template lang="pug">
   main
-    the-nav.ktsa-KTSAMain_Navigation
-    router-view.ktsa-KTSAMain_RouterView
+    the-nav.navigation
+    router-view.main-router-view
 </template>
 
 <style scoped>
-.ktsa-KTSAMain_Navigation {
+.navigation {
   @mixin ktsa_section;
   grid-column: 1;
 
   position: sticky;
-  top: 1em;
+  top: 0.5rem;
 
   display: table;
 }
-.ktsa-KTSAMain_RouterView {
+.main-router-view {
   grid-column: 2;
 }
 </style>

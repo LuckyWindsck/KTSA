@@ -1,21 +1,21 @@
 <template lang="pug">
   section
-    div.ktsa-Slideshow_Container
-      div.ktsa-Slideshow_Slides(v-for="([name, src], i) in this.slides", :key="i")
-        img.ktsa-Slideshow_SlideImage(:src="src")
-      a.ktsa-Slideshow_Prev(@click="plusSlides(-1)") &#10094;
-      a.ktsa-Slideshow_Next(@click="plusSlides(1)") &#10095;
-    div.ktsa-Slideshow_Menu
-      div.ktsa-Slideshow_Caption {{ this.slides[slideIndex][0] }}
-      span.ktsa-Slideshow_Dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
+    div.slide-container
+      div.slide(v-for="([name, src], i) in this.slides", :key="i")
+        img.slide-image(:src="src")
+      a.btn-prev-slide(@click="plusSlides(-1)") &#10094;
+      a.btn-next-slide(@click="plusSlides(1)") &#10095;
+    div.slide-menu
+      div.slide-caption {{ this.slides[slideIndex][0] }}
+      span.btn-slide-dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
 </template>
 
 <style scoped>
-.ktsa-Slideshow_Container {
+.slide-container {
   max-width: 1000px;
   position: relative;
 }
-.ktsa-Slideshow_Slides {
+.slide {
   display: none;
 
   /* use grid to calculate width and height */
@@ -34,36 +34,47 @@
     opacity: 1;
   }
 }
-.ktsa-Slideshow_SlideImage {
+.slide-image {
   display: block;
   max-width: 100%;
 }
-.ktsa-Slideshow_Prev,
-.ktsa-Slideshow_Next {
-  @mixin ktsa_aside_arrow;
+.btn-prev-slide,
+.btn-next-slide {
+  width: auto;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  border-radius: 0 3px 3px 0;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  cursor: pointer;
+  user-select: none;
 }
-.ktsa-Slideshow_Next {
+.btn-next-slide {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-.ktsa-Slideshow_Prev:hover,
-.ktsa-Slideshow_Next:hover {
+.btn-prev-slide:hover,
+.btn-next-slide:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.ktsa-Slideshow_Menu {
+.slide-menu {
   background-color: var(--KTSA-bg-caption);
   display: grid;
   grid-template-columns: 16fr 1fr 1fr 1fr;
   align-items: center;
 }
-.ktsa-Slideshow_Caption {
+.slide-caption {
   position: relative;
   width: calc(100% - 3rem);
   color: white;
   font-size: 1.5rem;
   margin-left: 1em;
 }
-.ktsa-Slideshow_Dot {
+.btn-slide-dot {
   margin: 0 2px;
   border-radius: 50%;
 
@@ -79,7 +90,7 @@
 }
 
 .active,
-.ktsa-Slideshow_Dot:hover {
+.btn-slide-dot:hover {
   background-color: var(--KTSA-fg-blue);
 }
 </style>
@@ -117,12 +128,8 @@ export default {
     },
     showSlides(n) {
       clearInterval(this.timer);
-      const slides = Array.from(
-        document.getElementsByClassName("ktsa-Slideshow_Slides")
-      );
-      const dots = Array.from(
-        document.getElementsByClassName("ktsa-Slideshow_Dot")
-      );
+      const slides = Array.from(document.getElementsByClassName("slide"));
+      const dots = Array.from(document.getElementsByClassName("btn-slide-dot"));
 
       this.slideIndex = (this.slideIndex + slides.length) % slides.length;
 
