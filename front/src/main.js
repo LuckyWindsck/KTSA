@@ -48,7 +48,7 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
   state: {
-    login: false,
+    login: true,
   },
   mutations: {
     login(state) {
