@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Vuex from 'vuex';
 import setting from './config/setting';
 // TODO: solve the problem when not using file extension
 import news from './posts/news';
@@ -37,16 +38,31 @@ files.keys().forEach((key) => {
 });
 
 // Use plugin
-const plugins = [plugin, VueRouter];
-plugins.forEach((p) => Vue.use(p));
+const plugins = [plugin, VueRouter, Vuex];
+plugins.forEach(p => Vue.use(p));
 
 const router = new VueRouter({
   mode: 'history',
   routes: routes(),
 });
 
+const store = new Vuex.Store({
+  state: {
+    login: false,
+  },
+  mutations: {
+    login(state) {
+      state.login = true;
+    },
+    logout(state) {
+      state.login = false;
+    },
+  },
+});
+
 // Creating the Vue application instance
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
   router,
+  store,
 }).$mount('.vue');
