@@ -1,6 +1,8 @@
 <template lang="pug">
   section.ktsa-home
-    the-home-main.home-main
+    section.home-main
+      the-home-slideshow.home-slideshow
+      the-home-news.home-news
     the-aside.home-aside
 </template>
 
@@ -16,6 +18,15 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-row-gap: 1rem;
+}
+.home-slideshow {
+  @mixin ktsa_section;
+
+  display: grid;
+  grid-template-rows: 20fr 3fr;
+}
+.home-news {
+  @mixin ktsa_section;
 }
 .home-aside {
   grid-column: 2;
