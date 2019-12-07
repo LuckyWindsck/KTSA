@@ -10,8 +10,9 @@
 
 <style scoped>
 .cover-photo {
-  width: 100vw;
   display: block;
+
+  width: 100vw;
 }
 </style>
 

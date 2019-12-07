@@ -7,13 +7,13 @@
 
 <style scoped>
 .navigation {
-  @mixin ktsa_section;
-  grid-column: 1;
-
   position: sticky;
   top: 0.5rem;
 
   display: table;
+
+  grid-column: 1;
+  @mixin ktsa_section;
 }
 .main-router-view {
   grid-column: 2;

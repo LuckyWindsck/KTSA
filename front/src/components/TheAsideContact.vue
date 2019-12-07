@@ -21,22 +21,25 @@
 
 <style scoped>
 .campus-section {
-  padding: 1rem 0;
-  line-height: 1.5em;
-  font-size: 1.5rem;
-
   flex-direction: column;
+
+  padding: 1rem 0;
+
+  font-size: 1.5rem;
+  line-height: 1.5em;
 }
 .campus-link-list {
-  list-style: none;
   margin-left: -1.5em;
+
+  list-style: none;
 }
 .invitation-section {
-  padding: 0 1rem;
-  line-height: 1.5em;
-  font-size: 1.25rem;
-
   flex-direction: column;
+
+  padding: 0 1rem;
+
+  font-size: 1.25rem;
+  line-height: 1.5em;
 }
 </style>
 

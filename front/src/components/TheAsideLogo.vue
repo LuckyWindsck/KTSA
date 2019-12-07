@@ -12,26 +12,27 @@
 
 <style scoped>
 .logo-frame {
-  margin: 0.5rem;
   overflow: hidden;
+
+  margin: 0.5rem;
 }
 /* To make logo a square */
 .logo-frame::before {
-  content: "";
   float: left;
+
   padding-top: 100%;
+
+  content: "";
 }
 .logo-image {
   width: 100%;
 
-  /* TODO: refactor */
-  /*
-    2 / 12: grid
-    638 / 1063: size ratio
-    (1 - (638 / 1063)): size increased by pseudo element
-    1 / 2: half
-    3: scale(3);
-   */
+  /* TODO: refactor
+  2 / 12: grid
+  638 / 1063: size ratio
+  (1 - (638 / 1063)): size increased by pseudo element
+  1 / 2: half
+  3: scale(3); */
   transform: translateY(calc((2 / 12) * (1 - (638 / 1063)) * (1 / 2) * 100vw))
     scale(3);
 }

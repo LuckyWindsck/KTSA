@@ -18,6 +18,7 @@
 <style scoped>
 .footer-link {
   color: var(--KTSA-fg-blue);
+
   font-size: 1.5rem;
 }
 </style>

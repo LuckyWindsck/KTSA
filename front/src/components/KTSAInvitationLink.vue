@@ -7,6 +7,7 @@
 <style scoped>
 .invitation-link {
   width: 100%;
+
   border-radius: 1em;
 }
 </style>

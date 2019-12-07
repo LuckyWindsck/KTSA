@@ -21,17 +21,19 @@
 
 <style scoped>
 .slide-container {
-  max-width: 1000px;
   position: relative;
+
+  max-width: 1000px;
 }
 .slide {
   display: none;
+  overflow: hidden;
 
   /* use grid to calculate width and height */
   /* width : height = 1 : 2 */
   width: calc(7 / 12 * 100vw);
   height: calc(3.5 / 12 * 100vw);
-  overflow: hidden;
+
   animation-name: fade;
   animation-duration: 1.5s;
 }
@@ -45,25 +47,31 @@
 }
 .slide-image {
   display: block;
+
   max-width: 100%;
 }
 .btn-prev-slide,
 .btn-next-slide {
-  width: auto;
   position: absolute;
   top: 50%;
-  padding: 16px;
-  border-radius: 0 3px 3px 0;
+
+  width: auto;
   margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
+  padding: 16px;
+
   cursor: pointer;
   user-select: none;
+  transition: 0.6s ease;
+
+  color: white;
+  border-radius: 0 3px 3px 0;
+
+  font-size: 18px;
+  font-weight: bold;
 }
 .btn-next-slide {
   right: 0;
+
   border-radius: 3px 0 0 3px;
 }
 .btn-prev-slide:hover,
@@ -71,31 +79,35 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 .slide-menu {
-  background-color: var(--KTSA-bg-caption);
   display: grid;
-  grid-template-columns: 16fr 1fr 1fr 1fr;
   align-items: center;
+
+  background-color: var(--KTSA-bg-caption);
+
+  grid-template-columns: 16fr 1fr 1fr 1fr;
 }
 .slide-caption {
   position: relative;
+
   width: calc(100% - 3rem);
-  color: white;
-  font-size: 1.5rem;
   margin-left: 1em;
+
+  color: white;
+
+  font-size: 1.5rem;
 }
 .btn-slide-dot {
-  margin: 0 2px;
-  border-radius: 50%;
-
-  height: 1rem;
-  width: 1rem;
-
-  background-color: white;
-
   display: inline-block;
+
+  width: 1rem;
+  height: 1rem;
+  margin: 0 2px;
 
   cursor: pointer;
   transition: background-color 0.6s ease;
+
+  border-radius: 50%;
+  background-color: white;
 }
 
 .active,
