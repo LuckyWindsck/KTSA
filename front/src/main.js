@@ -52,10 +52,10 @@ const store = new Vuex.Store({
   },
   mutations: {
     login(state) {
-      state.login = true;
+      Object.assign(state, { login: true });
     },
     logout(state) {
-      state.login = false;
+      Object.assign(state, { login: false });
     },
   },
 });
