@@ -1,5 +1,5 @@
-<template lang="pug">
-div About Us
+<template>
+  <div>About Us</div>
 </template>
 
 <style scoped>

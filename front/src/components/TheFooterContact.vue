@@ -1,13 +1,10 @@
-<template lang="pug">
-section
-  address
-    a.footer-link(:href="`mailto:${this.mail}`") {{ this.mail }}
-  p
-    a.footer-link(href="") Site Map
-  p
-    a.footer-link(href="") Privacy Policy
-  p
-    a.footer-link(href="") Site Policy
+<template>  
+  <section>
+    <address><a class="footer-link" :href="`mailto:${this.mail}`">{{ this.mail }}</a></address>
+    <p><a class="footer-link" href="">Site Map</a></p>
+    <p><a class="footer-link" href="">Privacy Policy</a></p>
+    <p><a class="footer-link" href="">Site Policy</a></p>
+  </section>
 </template>
 
 <style scoped>

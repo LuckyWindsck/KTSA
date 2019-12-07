@@ -1,5 +1,5 @@
-<template lang="pug">
-div Campus
+<template>
+  <div>Campus</div>
 </template>
 
 <style scoped>

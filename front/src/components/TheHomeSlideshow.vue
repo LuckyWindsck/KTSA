@@ -1,13 +1,17 @@
-<template lang="pug">
-section
-  div.slide-container
-    div.slide(v-for="([name, src], i) in this.slides", :key="i")
-      img.slide-image(:src="src")
-    a.btn-prev-slide(@click="plusSlides(-1)") &#10094;
-    a.btn-next-slide(@click="plusSlides(1)") &#10095;
-  div.slide-menu
-    div.slide-caption {{ this.slides[slideIndex][0] }}
-    span.btn-slide-dot(v-for="(e, i) in [1,2,3]", :key="i", @click="currentSlide(i)")
+<template>
+  <section>
+    <div class="slide-container">
+      <div class="slide" v-for="([name, src], i) in this.slides" :key="i">
+        <img class="slide-image" :src="src" />
+      </div>
+      <a class="btn-prev-slide" @click="plusSlides(-1)">&#10094;</a>
+      <a class="btn-next-slide" @click="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="slide-menu">
+      <div class="slide-caption">{{ this.slides[slideIndex][0] }}</div>
+      <span class="btn-slide-dot" v-for="(e, i) in [1,2,3]" :key="i" @click="currentSlide(i)"></span>
+    </div>
+  </section>
 </template>
 
 <style scoped>

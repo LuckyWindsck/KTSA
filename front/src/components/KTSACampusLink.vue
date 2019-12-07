@@ -1,6 +1,7 @@
-<template lang="pug">
-li
-  a(:href="this.campus.url") {{ this.campus.name[this.$locale] }}
+<template>
+  <li>
+    <a :href="this.campus.url">{{ this.campus.name[this.$locale] }}</a>
+  </li>
 </template>
 
 <style scoped>

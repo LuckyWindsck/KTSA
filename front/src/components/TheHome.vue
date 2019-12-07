@@ -1,9 +1,11 @@
-<template lang="pug">
-section.ktsa-home
-  section.home-main
-    the-home-slideshow.home-slideshow
-    the-home-news.home-news
-  the-aside.home-aside
+<template>
+  <section class="ktsa-home">
+    <section class="home-main">
+      <the-home-slideshow class="home-slideshow"></the-home-slideshow>
+      <the-home-news class="home-news"></the-home-news>
+    </section>
+    <the-aside class="home-aside"></the-aside>
+  </section>
 </template>
 
 <style scoped>

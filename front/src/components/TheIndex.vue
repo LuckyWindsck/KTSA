@@ -1,8 +1,9 @@
-<template lang="pug">
-div
-  the-header
-  the-main.main
-  the-footer.footer
+<template>
+  <div>
+    <the-header></the-header>
+    <the-main class="main"></the-main>
+    <the-footer class="footer"></the-footer>
+  </div>
 </template>
 
 <style scoped>
