@@ -1,6 +1,6 @@
-import settings from '../../../config/settings';
-import news from '../../../posts/news';
-import images from '../../../config/images';
+import settings from '@/config/settings';
+import news from '@/config/news';
+import images from '@/config/images';
 
 export default {
   install(vue) {

@@ -1,3 +1,5 @@
+const webpackConfig = require('./webpack.config');
+
 module.exports = {
   env: {
     browser: true,
@@ -18,6 +20,13 @@ module.exports = {
   plugins: [
     'vue',
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: Object.entries(webpackConfig.resolve.alias),
+      },
+    },
+  },
   rules: {
     'no-console': ['warn', { allow: ['log'] }],
   },
