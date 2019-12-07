@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import account from './modules/account';
-import global from './modules/global';
 
 Vue.use(Vuex);
 
@@ -11,7 +10,6 @@ const debug = process.env.NODE_ENV !== 'production';
 export default new Vuex.Store({
   modules: {
     account,
-    global,
   },
   strict: debug,
 });
