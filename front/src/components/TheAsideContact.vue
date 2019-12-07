@@ -47,8 +47,8 @@
 export default {
   data() {
     return {
-      campuses: this.$store.state.settings.campuses,
-      contacts: Object.values(this.$store.state.settings.ktsa.contacts).filter(
+      campuses: this.$store.state.global.settings.campuses,
+      contacts: Object.values(this.$store.state.global.settings.ktsa.contacts).filter(
         (contact) => contact.image() !== undefined,
       ),
     };

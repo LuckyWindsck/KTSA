@@ -3,7 +3,10 @@
     <div>
       <span>・NEWS</span>
     </div>
-    <div v-for="({ time, title, image }, i) in this.$store.state.news" :key="i">
+    <div
+      v-for="({ time, title, image }, i) in this.$store.state.global.news"
+      :key="i"
+    >
       <article>
         <p>{{ time }}</p>
         <img :src="image" />

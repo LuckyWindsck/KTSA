@@ -1,7 +1,10 @@
 <template>
   <section>
     <div class="logo-frame">
-      <img class="logo-image" :src="this.$store.state.images.HOME.Logo" />
+      <img
+        class="logo-image"
+        :src="this.$store.state.global.images.HOME.Logo"
+      />
     </div>
     <h1 class="logo-caption">
       <span class="logo-caption-block">Keio Taiwanese</span>
