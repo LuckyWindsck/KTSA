@@ -1,14 +1,10 @@
 import Vue from 'vue';
-import GlobalComponentsRegistration from './plugins/global/components-registration';
-import GlobalVariables from './plugins/global/variables';
+import Global from './plugins/global';
 import router from './router';
 import store from './store';
 
-Vue.use(GlobalComponentsRegistration, {
-  files: require.context('./', true, /\.vue$/i),
-});
-
-Vue.use(GlobalVariables);
+const files = require.context('./', true, /\.vue$/i);
+Vue.use(Global, { files });
 
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
