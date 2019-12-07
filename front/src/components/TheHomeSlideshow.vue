@@ -109,8 +109,8 @@
 export default {
   data() {
     return {
-      slides: this.$settings.slideshow.slides,
-      changeInterval: this.$settings.slideshow.changeInterval,
+      slides: this.$store.state.settings.slideshow.slides,
+      changeInterval: this.$store.state.settings.slideshow.changeInterval,
       index: 0,
       timer: 0,
     };

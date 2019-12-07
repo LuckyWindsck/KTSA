@@ -2,7 +2,7 @@
   <header>
     <img
       class="cover-photo"
-      :src="this.$images.LAYOUT.CoverPhoto"
+      :src="this.$store.state.images.LAYOUT.CoverPhoto"
       alt="KTSA cover photo"
     />
   </header>

@@ -1,44 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
+
 import settings from './config/settings';
-// TODO: solve the problem when not using file extension
 import news from './posts/news';
 import images from './config/images';
+
 import routes from './config/routes';
-import plugin from './plugins/plugin';
+import ComponentsGlobalRegistration from './plugins/components-global-registration';
 
-// Globally import modules
-const modules = [
-  ['$settings', settings],
-  ['$locale', settings.locale],
-  ['$news', news],
-  ['$images', images],
-];
-modules.forEach(([prop, value]) => {
-  Object.defineProperty(Vue.prototype, prop, { value });
+Vue.use(ComponentsGlobalRegistration, {
+  files: require.context('./', true, /\.vue$/i),
 });
 
-/**
- * Recursively scan this directory for the Vue components and automatically
- * register them with their "basename".
- *
- * Eg. ./components/Example.vue -> <example></example>
- * Eg. ./components/ExampleComponent.vue -> <example></example>
- */
-const files = require.context('./', true, /\.vue$/i);
-files.keys().forEach((key) => {
-  Vue.component(
-    key.replace(/.*\/(.*?)((Component)?)\.vue/, '$1') // Get the component name
-      .replace(/([a-z])([A-Z])/g, '$1-$2') // Convert to kebab-case
-      .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
-      .toLowerCase(), // Convert to lowercase
-    files(key).default,
-  );
-});
-
-// Use plugin
-const plugins = [plugin, VueRouter, Vuex];
+const plugins = [VueRouter, Vuex];
 plugins.forEach((p) => Vue.use(p));
 
 const router = new VueRouter({
@@ -49,6 +24,10 @@ const router = new VueRouter({
 const store = new Vuex.Store({
   state: {
     login: true,
+    locale: settings.locale,
+    settings,
+    news,
+    images,
   },
   mutations: {
     login(state) {
@@ -60,7 +39,6 @@ const store = new Vuex.Store({
   },
 });
 
-// Creating the Vue application instance
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
   router,

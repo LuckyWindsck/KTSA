@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      mail: this.$settings.ktsa.contacts.mail.url,
+      mail: this.$store.state.settings.ktsa.contacts.mail.url,
     };
   },
 };

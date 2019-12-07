@@ -1,6 +1,8 @@
 <template>
   <li>
-    <a :href="this.campus.url">{{ this.campus.name[this.$locale] }}</a>
+    <a :href="this.campus.url">{{
+      this.campus.name[this.$store.state.locale]
+    }}</a>
   </li>
 </template>
 
