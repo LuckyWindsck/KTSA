@@ -1,14 +1,28 @@
-<template lang="pug">
-  div.admin-login
-    form.form-login(action="" method="" @submit.prevent="signIn")
-      div.header-login
-        h1.title-login Log in to KTSA Dashboard
-      div.body-login
-        label.label-login(for="username") Username
-        input.text-input-login(type="text" id="username" v-model="username")
-        label.label-login(for="password") Password
-        input.password-input-login(type="password" id="password" v-model="password")
-        button.btn-login(type="submit") Log in
+<template>
+  <div class="admin-login">
+    <form class="form-login" action="" method="" @submit.prevent="signIn">
+      <div class="header-login">
+        <h1 class="title-login">Log in to KTSA Dashboard</h1>
+      </div>
+      <div class="body-login">
+        <label class="label-login" for="username">Username</label>
+        <input
+          class="text-input-login"
+          type="text"
+          id="username"
+          v-model="username"
+        />
+        <label class="label-login" for="password">Password</label>
+        <input
+          class="password-input-login"
+          type="password"
+          id="password"
+          v-model="password"
+        />
+        <button class="btn-login" type="submit">Log in</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style scoped>
@@ -114,23 +128,22 @@
 export default {
   data() {
     return {
-      _username: "admin",
-      _password: "pass",
-      username: "admin",
-      password: "pass"
+      _username: 'admin',
+      _password: 'pass',
+      username: 'admin',
+      password: 'pass',
     };
   },
   methods: {
     signIn() {
       const validUsername = this.username === this.$data._username;
       const validPassword = this.password === this.$data._password;
-      if (!validUsername) console.log("Invalid username");
-      if (!validPassword) console.log("Invalid password");
+      if (!validUsername) console.log('Invalid username');
+      if (!validPassword) console.log('Invalid password');
       if (!validUsername || !validPassword) return;
-      this.$store.commit("login");
-      this.$router.push("dashboard");
-    }
-  }
+      this.$store.commit('login');
+      this.$router.push('dashboard');
+    },
+  },
 };
 </script>
-

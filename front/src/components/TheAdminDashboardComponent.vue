@@ -1,19 +1,37 @@
-<template lang="pug">
-  div.admin-dashboard
-    form.form-dashboard(action="" method="" @submit.prevent="createPost")
-      div.header-dashboard
-        h1.title-dashboard Dashboard
-      div.body-dashboard
-        label.label-dashboard(for="title") Title
-        input.text-input-dashboard(type="text" id="title")
-        label.label-dashboard(for="content") Content
-        textarea.textarea-dashboard(id="content")
-        label.label-dashboard(for="image") Image
-        input.file-input-dashboard(type="file" id="image" accept="image/*")
-        button.btn-submit-dashboard(type="submit") Create a post
-    form.form-dashboard(action="" method="" @submit.prevent="signOut")
-      div.body-dashboard
-        button.btn-logout(type="submit") Log out
+<template>
+  <div class="admin-dashboard">
+    <form
+      class="form-dashboard"
+      action=""
+      method=""
+      @submit.prevent="createPost"
+    >
+      <div class="header-dashboard">
+        <h1 class="title-dashboard">Dashboard</h1>
+      </div>
+      <div class="body-dashboard">
+        <label class="label-dashboard" for="title">Title</label>
+        <input class="text-input-dashboard" type="text" id="title" />
+        <label class="label-dashboard" for="content">Content</label>
+        <textarea class="textarea-dashboard" id="content"></textarea>
+        <label class="label-dashboard" for="image">Image</label>
+        <input
+          class="file-input-dashboard"
+          type="file"
+          id="image"
+          accept="image/*"
+        />
+        <button class="btn-submit-dashboard" type="submit">
+          Create a post
+        </button>
+      </div>
+    </form>
+    <form class="form-dashboard" action="" method="" @submit.prevent="signOut">
+      <div class="body-dashboard">
+        <button class="btn-logout" type="submit">Log out</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style scoped>
@@ -187,19 +205,19 @@ export default {
   },
   methods: {
     signOut() {
-      this.$store.commit("logout");
-      this.$router.push("login");
-    }
+      this.$store.commit('logout');
+      this.$router.push('login');
+    },
   },
   computed: {
     login() {
       return this.$store.state.login;
-    }
+    },
   },
   mounted() {
     if (!this.login) {
-      this.$router.push("login");
+      this.$router.push('login');
     }
-  }
+  },
 };
 </script>
