@@ -23,7 +23,7 @@ const common = {
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/views/index.html',
+      template: './src/index.html',
       filename: 'index.html',
       favicon: './public/favicon.ico',
     }),
