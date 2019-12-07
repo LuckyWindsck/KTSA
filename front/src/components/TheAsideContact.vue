@@ -2,11 +2,19 @@
   <section>
     <section class="campus-section">
       <ul class="campus-link-list">
-        <ktsa-campus-link v-for="(campus, i) in this.campuses" :key="i" :campus="campus"></ktsa-campus-link>
+        <ktsa-campus-link
+          v-for="(campus, i) in this.campuses"
+          :key="i"
+          :campus="campus"
+        ></ktsa-campus-link>
       </ul>
     </section>
     <section class="invitation-section">
-      <ktsa-invitation-link v-for="(contact, i) in this.contacts" :key="i" :contact="contact"></ktsa-invitation-link>
+      <ktsa-invitation-link
+        v-for="(contact, i) in this.contacts"
+        :key="i"
+        :contact="contact"
+      ></ktsa-invitation-link>
     </section>
   </section>
 </template>

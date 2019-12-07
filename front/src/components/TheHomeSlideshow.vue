@@ -9,7 +9,12 @@
     </div>
     <div class="slide-menu">
       <div class="slide-caption">{{ this.slides[slideIndex][0] }}</div>
-      <span class="btn-slide-dot" v-for="(e, i) in [1,2,3]" :key="i" @click="currentSlide(i)"></span>
+      <span
+        class="btn-slide-dot"
+        v-for="(e, i) in [1, 2, 3]"
+        :key="i"
+        @click="currentSlide(i)"
+      ></span>
     </div>
   </section>
 </template>
