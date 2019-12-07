@@ -3,7 +3,7 @@
     <div class="logo-frame">
       <img
         class="logo-image"
-        :src="this.$store.state.global.images.HOME.Logo"
+        :src="this.images.HOME.Logo"
       />
     </div>
     <h1 class="logo-caption">

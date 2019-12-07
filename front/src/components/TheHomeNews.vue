@@ -4,7 +4,7 @@
       <span>・NEWS</span>
     </div>
     <div
-      v-for="({ time, title, image }, i) in this.$store.state.global.news"
+      v-for="({ time, title, image }, i) in this.news"
       :key="i"
     >
       <article>

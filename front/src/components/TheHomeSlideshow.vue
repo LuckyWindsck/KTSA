@@ -109,13 +109,17 @@
 export default {
   data() {
     return {
-      slides: this.$store.state.global.settings.slideshow.slides,
-      changeInterval: this.$store.state.global.settings.slideshow.changeInterval,
       index: 0,
       timer: 0,
     };
   },
   computed: {
+    slides() {
+      return this.settings.slideshow.slides;
+    },
+    changeInterval() {
+      return this.settings.slideshow.changeInterval;
+    },
     currentSlide() {
       return this.slides[this.index];
     },

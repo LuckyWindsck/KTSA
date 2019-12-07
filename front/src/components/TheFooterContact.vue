@@ -25,10 +25,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      mail: this.$store.state.global.settings.ktsa.contacts.mail.url,
-    };
+  computed: {
+    mail() {
+      return this.settings.ktsa.contacts.mail.url;
+    },
   },
 };
 </script>

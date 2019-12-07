@@ -1,8 +1,6 @@
 <template>
   <li>
-    <a :href="this.campus.url">{{
-      this.campus.name[this.$store.state.global.locale]
-    }}</a>
+    <a :href="campusUrl">{{ campusName }}</a>
   </li>
 </template>
 
@@ -15,6 +13,14 @@ export default {
     campus: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    campusUrl() {
+      return this.campus.url;
+    },
+    campusName() {
+      return this.campus.name[this.locale];
     },
   },
 };

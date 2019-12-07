@@ -45,13 +45,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      campuses: this.$store.state.global.settings.campuses,
-      contacts: Object.values(this.$store.state.global.settings.ktsa.contacts).filter(
+  computed: {
+    campuses() {
+      return this.settings.campuses;
+    },
+    contacts() {
+      return Object.values(this.settings.ktsa.contacts).filter(
         (contact) => contact.image() !== undefined,
-      ),
-    };
+      );
+    },
   },
 };
 </script>
