@@ -128,16 +128,14 @@
 export default {
   data() {
     return {
-      _username: 'admin',
-      _password: 'pass',
       username: 'admin',
       password: 'pass',
     };
   },
   methods: {
     signIn() {
-      const validUsername = this.username === this.$data._username;
-      const validPassword = this.password === this.$data._password;
+      const validUsername = this.username === 'admin';
+      const validPassword = this.password === 'pass';
       if (!validUsername) console.log('Invalid username');
       if (!validPassword) console.log('Invalid password');
       if (!validUsername || !validPassword) return;
