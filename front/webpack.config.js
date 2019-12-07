@@ -44,10 +44,6 @@ const common = {
         ],
       },
       {
-        test: /\.pug$/,
-        loader: 'pug-plain-loader',
-      },
-      {
         test: /\.(png|jpg|gif)$/i,
         use: [
           {
