@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-import setting from './config/setting';
+import settings from './config/settings';
 // TODO: solve the problem when not using file extension
 import news from './posts/news';
 import images from './config/images';
@@ -10,8 +10,8 @@ import plugin from './plugins/plugin';
 
 // Globally import modules
 const modules = [
-  ['$setting', setting],
-  ['$locale', setting.locale],
+  ['$settings', settings],
+  ['$locale', settings.locale],
   ['$news', news],
   ['$images', images],
 ];

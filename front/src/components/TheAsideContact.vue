@@ -47,8 +47,8 @@
 export default {
   data() {
     return {
-      campuses: this.$setting.campuses,
-      contacts: Object.values(this.$setting.ktsa.contacts).filter(
+      campuses: this.$settings.campuses,
+      contacts: Object.values(this.$settings.ktsa.contacts).filter(
         (contact) => contact.image() !== undefined,
       ),
     };
