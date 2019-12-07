@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import ComponentsGlobalRegistration from './plugins/components-global-registration';
+import GlobalComponentsRegistration from './plugins/global/components-registration';
 import router from './router';
 import store from './store';
 
-Vue.use(ComponentsGlobalRegistration, {
+Vue.use(GlobalComponentsRegistration, {
   files: require.context('./', true, /\.vue$/i),
 });
 
