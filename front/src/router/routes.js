@@ -1,60 +1,58 @@
 import Vue from 'vue';
 
-const component = (name) => Vue.options.components[name];
-
 export default () => [
   {
     path: '/',
     name: 'index',
-    component: component('the-index'),
+    component: Vue.component('the-index'),
     children: [
       {
         path: 'home',
         name: 'home',
-        component: component('the-home'),
+        component: Vue.component('the-home'),
         alias: '',
       },
       {
         path: 'news',
         name: 'news',
-        component: component('the-news'),
+        component: Vue.component('the-news'),
       },
       {
         path: 'about-us',
         name: 'about-us',
-        component: component('the-about-us'),
+        component: Vue.component('the-about-us'),
       },
       {
         path: 'members',
         name: 'members',
-        component: component('the-members'),
+        component: Vue.component('the-members'),
       },
       {
         path: 'events',
         name: 'events',
-        component: component('the-events'),
+        component: Vue.component('the-events'),
       },
       {
         path: 'campus',
         name: 'campus',
-        component: component('the-campus'),
+        component: Vue.component('the-campus'),
       },
       {
         path: 'contact',
         name: 'contact',
-        component: component('the-contact'),
+        component: Vue.component('the-contact'),
       },
     ],
   },
   {
     path: '/login',
     name: 'login',
-    component: component('the-admin-login'),
+    component: Vue.component('the-admin-login'),
   },
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: component('the-admin-dashboard'),
+    component: Vue.component('the-admin-dashboard'),
     alias: '/admin',
   },
   {
