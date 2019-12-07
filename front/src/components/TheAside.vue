@@ -1,7 +1,7 @@
 <template>
   <aside>
-    <the-aside-logo></the-aside-logo>
-    <the-aside-contact></the-aside-contact>
+    <the-aside-logo />
+    <the-aside-contact />
   </aside>
 </template>
 

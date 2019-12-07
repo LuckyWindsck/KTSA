@@ -1,8 +1,8 @@
 <template>
   <div>
-    <the-header></the-header>
-    <the-main class="main"></the-main>
-    <the-footer class="footer"></the-footer>
+    <the-header />
+    <the-main class="main" />
+    <the-footer class="footer" />
   </div>
 </template>
 

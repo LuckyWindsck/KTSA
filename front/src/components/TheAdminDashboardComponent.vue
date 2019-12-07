@@ -13,7 +13,7 @@
         <label class="label-dashboard" for="title">Title</label>
         <input class="text-input-dashboard" type="text" id="title" />
         <label class="label-dashboard" for="content">Content</label>
-        <textarea class="textarea-dashboard" id="content"></textarea>
+        <textarea class="textarea-dashboard" id="content" />
         <label class="label-dashboard" for="image">Image</label>
         <input
           class="file-input-dashboard"

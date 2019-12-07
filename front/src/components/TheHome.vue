@@ -1,10 +1,10 @@
 <template>
   <section class="ktsa-home">
     <section class="home-main">
-      <the-home-slideshow class="home-slideshow"></the-home-slideshow>
-      <the-home-news class="home-news"></the-home-news>
+      <the-home-slideshow class="home-slideshow" />
+      <the-home-news class="home-news" />
     </section>
-    <the-aside class="home-aside"></the-aside>
+    <the-aside class="home-aside" />
   </section>
 </template>
 
