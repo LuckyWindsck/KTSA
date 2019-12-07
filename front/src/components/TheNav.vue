@@ -48,8 +48,8 @@
 export default {
   data() {
     return {
-      dev: process.env.NODE_ENV === "development"
+      dev: process.env.NODE_ENV === 'development',
     };
-  }
+  },
 };
 </script>

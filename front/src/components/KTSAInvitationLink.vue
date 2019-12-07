@@ -16,8 +16,8 @@ export default {
   props: {
     contact: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>

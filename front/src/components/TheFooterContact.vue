@@ -1,9 +1,17 @@
-<template>  
+<template>
   <section>
-    <address><a class="footer-link" :href="`mailto:${this.mail}`">{{ this.mail }}</a></address>
-    <p><a class="footer-link" href="">Site Map</a></p>
-    <p><a class="footer-link" href="">Privacy Policy</a></p>
-    <p><a class="footer-link" href="">Site Policy</a></p>
+    <address>
+      <a class="footer-link" :href="`mailto:${this.mail}`">{{ this.mail }}</a>
+    </address>
+    <p>
+      <a class="footer-link" href>Site Map</a>
+    </p>
+    <p>
+      <a class="footer-link" href>Privacy Policy</a>
+    </p>
+    <p>
+      <a class="footer-link" href>Site Policy</a>
+    </p>
   </section>
 </template>
 
@@ -18,8 +26,8 @@
 export default {
   data() {
     return {
-      mail: this.$setting.ktsa.contacts.mail.url
+      mail: this.$setting.ktsa.contacts.mail.url,
     };
-  }
+  },
 };
 </script>

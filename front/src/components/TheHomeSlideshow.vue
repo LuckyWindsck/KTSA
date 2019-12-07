@@ -105,20 +105,20 @@ export default {
     return {
       slides: [
         [
-          "20190125-一夜台北",
-          this.$images.EVENTS["20190125-一夜台北"]["20190125-一夜台北1"]
+          '20190125-一夜台北',
+          this.$images.EVENTS['20190125-一夜台北']['20190125-一夜台北1'],
         ],
         [
-          "20181013-SFC秋祭",
-          this.$images.EVENTS["20181013-SFC秋祭"]["20181011"]
+          '20181013-SFC秋祭',
+          this.$images.EVENTS['20181013-SFC秋祭']['20181011'],
         ],
         [
-          "20190622-慶早交流活動",
-          this.$images.EVENTS["20190622-慶早交流活動"]["20190622慶早交流"]
-        ]
+          '20190622-慶早交流活動',
+          this.$images.EVENTS['20190622-慶早交流活動']['20190622慶早交流'],
+        ],
       ],
       slideIndex: 0,
-      timer: 0
+      timer: 0,
     };
   },
   methods: {
@@ -130,23 +130,23 @@ export default {
       this.slideIndex = n;
       this.showSlides(this.slideIndex);
     },
-    showSlides(n) {
+    showSlides() {
       clearInterval(this.timer);
-      const slides = Array.from(document.getElementsByClassName("slide"));
-      const dots = Array.from(document.getElementsByClassName("btn-slide-dot"));
+      const slides = Array.from(document.getElementsByClassName('slide'));
+      const dots = Array.from(document.getElementsByClassName('btn-slide-dot'));
 
       this.slideIndex = (this.slideIndex + slides.length) % slides.length;
 
-      slides.forEach(slide => slide.style.setProperty("display", "none"));
-      dots.forEach(dot => dot.classList.remove("active"));
+      slides.forEach((slide) => slide.style.setProperty('display', 'none'));
+      dots.forEach((dot) => dot.classList.remove('active'));
 
-      slides[this.slideIndex].style.setProperty("display", "block");
-      dots[this.slideIndex].classList.add("active");
+      slides[this.slideIndex].style.setProperty('display', 'block');
+      dots[this.slideIndex].classList.add('active');
       this.timer = setTimeout(this.plusSlides, this.$setting.slide.time, 1);
-    }
+    },
   },
   mounted() {
     this.showSlides(this.slideIndex);
-  }
+  },
 };
 </script>

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-const component = name => Vue.options.components[name];
+const component = (name) => Vue.options.components[name];
 
 export default () => [
   {

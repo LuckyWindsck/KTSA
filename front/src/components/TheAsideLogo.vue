@@ -25,7 +25,7 @@
   width: 100%;
 
   /* TODO: refactor */
-  /* 
+  /*
     2 / 12: grid
     638 / 1063: size ratio
     (1 - (638 / 1063)): size increased by pseudo element

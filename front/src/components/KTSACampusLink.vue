@@ -12,8 +12,8 @@ export default {
   props: {
     campus: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
