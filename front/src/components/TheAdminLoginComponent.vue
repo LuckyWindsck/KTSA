@@ -139,7 +139,7 @@ export default {
       if (!validUsername) console.log('Invalid username');
       if (!validPassword) console.log('Invalid password');
       if (!validUsername || !validPassword) return;
-      this.$store.commit('login');
+      this.$store.commit('account/login');
       this.$router.push('dashboard');
     },
   },

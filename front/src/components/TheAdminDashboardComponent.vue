@@ -205,13 +205,13 @@ export default {
   },
   methods: {
     signOut() {
-      this.$store.commit('logout');
+      this.$store.commit('account/logout');
       this.$router.push('login');
     },
   },
   computed: {
     login() {
-      return this.$store.state.login;
+      return this.$store.state.account.login;
     },
   },
   mounted() {
