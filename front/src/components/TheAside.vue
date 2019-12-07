@@ -1,7 +1,7 @@
 <template lang="pug">
-  aside
-    the-aside-logo
-    the-aside-contact
+aside
+  the-aside-logo
+  the-aside-contact
 </template>
 
 <style scoped>

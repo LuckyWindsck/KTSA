@@ -1,6 +1,6 @@
 <template lang="pug">
-  footer
-    the-footer-contact
+footer
+  the-footer-contact
 </template>
 
 <style scoped>

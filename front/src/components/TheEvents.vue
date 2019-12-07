@@ -1,5 +1,5 @@
 <template lang="pug">
-  div Events
+div Events
 </template>
 
 <style scoped>

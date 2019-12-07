@@ -1,5 +1,5 @@
 <template lang="pug">
-  div Contact
+div Contact
 </template>
 
 <style scoped>

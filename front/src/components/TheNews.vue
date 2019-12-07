@@ -1,5 +1,5 @@
 <template lang="pug">
-  div News
+div News
 </template>
 
 <style scoped>

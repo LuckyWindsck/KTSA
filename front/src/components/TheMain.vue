@@ -1,7 +1,7 @@
 <template lang="pug">
-  main
-    the-nav.navigation
-    router-view.main-router-view
+main
+  the-nav.navigation
+  router-view.main-router-view
 </template>
 
 <style scoped>

@@ -1,9 +1,9 @@
 <template lang="pug">
-  section.ktsa-home
-    section.home-main
-      the-home-slideshow.home-slideshow
-      the-home-news.home-news
-    the-aside.home-aside
+section.ktsa-home
+  section.home-main
+    the-home-slideshow.home-slideshow
+    the-home-news.home-news
+  the-aside.home-aside
 </template>
 
 <style scoped>

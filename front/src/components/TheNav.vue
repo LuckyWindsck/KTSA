@@ -1,21 +1,21 @@
 <template lang="pug">
-  nav
-    div.nav_row
-      router-link(to='/home') HOME
-    div.nav_row
-      router-link(to='/news') NEWS
-    div.nav_row
-      router-link(to='/about-us') US
-    div.nav_row
-      router-link(to='/members') MEMBERS
-    div.nav_row
-      router-link(to='/events') EVENTS
-    div.nav_row
-      router-link(to='/campus') CAMPUS
-    div.nav_row
-      router-link(to='/contact') CONTACT
-    div.nav_row(v-if="this.dev")
-      router-link(to='/admin') ADMIN
+nav
+  div.nav_row
+    router-link(to='/home') HOME
+  div.nav_row
+    router-link(to='/news') NEWS
+  div.nav_row
+    router-link(to='/about-us') US
+  div.nav_row
+    router-link(to='/members') MEMBERS
+  div.nav_row
+    router-link(to='/events') EVENTS
+  div.nav_row
+    router-link(to='/campus') CAMPUS
+  div.nav_row
+    router-link(to='/contact') CONTACT
+  div.nav_row(v-if="this.dev")
+    router-link(to='/admin') ADMIN
 </template>
 
 <style scoped>

@@ -1,10 +1,10 @@
 <template lang="pug">
-  section
-    div.logo-frame
-      img.logo-image(:src="this.$images.HOME.Logo")
-    h1.logo-caption
-      span.logo-caption-block Keio Taiwanese
-      span.logo-caption-block Student Association
+section
+  div.logo-frame
+    img.logo-image(:src="this.$images.HOME.Logo")
+  h1.logo-caption
+    span.logo-caption-block Keio Taiwanese
+    span.logo-caption-block Student Association
 </template>
 
 <style scoped>

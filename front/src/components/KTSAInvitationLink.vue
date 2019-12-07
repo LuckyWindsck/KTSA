@@ -1,6 +1,6 @@
 <template lang="pug">
-  a(:href="this.contact.url")
-    img.invitation-link(:src="this.contact.image()")
+a(:href="this.contact.url")
+  img.invitation-link(:src="this.contact.image()")
 </template>
 
 <style scoped>

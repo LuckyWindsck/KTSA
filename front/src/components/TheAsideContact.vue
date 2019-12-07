@@ -1,10 +1,10 @@
 <template lang="pug">
-  section
-    section.campus-section
-      ul.campus-link-list
-        ktsa-campus-link(v-for="(campus, i) in this.campuses", :key="i" :campus="campus")
-    section.invitation-section
-      ktsa-invitation-link(v-for="(contact, i) in this.contacts", :key="i" :contact="contact")
+section
+  section.campus-section
+    ul.campus-link-list
+      ktsa-campus-link(v-for="(campus, i) in this.campuses", :key="i" :campus="campus")
+  section.invitation-section
+    ktsa-invitation-link(v-for="(contact, i) in this.contacts", :key="i" :contact="contact")
 </template>
 
 <style scoped>
