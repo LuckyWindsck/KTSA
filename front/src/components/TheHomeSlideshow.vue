@@ -1,19 +1,20 @@
 <template>
   <section>
     <div class="slide-container">
-      <div class="slide" v-for="([name, src], i) in this.slides" :key="i">
-        <img class="slide-image" :src="src" />
+      <div class="slide">
+        <img class="slide-image" :src="slideSrc" />
       </div>
-      <a class="btn-prev-slide" @click="plusSlides(-1)">&#10094;</a
-      ><a class="btn-next-slide" @click="plusSlides(1)">&#10095;</a>
+      <a class="btn-prev-slide" @click="slideChange(-1)">&#10094;</a
+      ><a class="btn-next-slide" @click="slideChange(1)">&#10095;</a>
     </div>
     <div class="slide-menu">
-      <div class="slide-caption">{{ this.slides[slideIndex][0] }}</div>
+      <div class="slide-caption">{{ slideTitle }}</div>
       <span
         class="btn-slide-dot"
-        v-for="(e, i) in [1, 2, 3]"
+        :class="dotClass(i)"
+        v-for="(e, i) in slides"
         :key="i"
-        @click="currentSlide(i)"
+        @click="slideJump(i)"
       ></span>
     </div>
   </section>
@@ -25,7 +26,7 @@
   position: relative;
 }
 .slide {
-  display: none;
+  display: block;
 
   /* use grid to calculate width and height */
   /* width : height = 1 : 2 */
@@ -108,53 +109,49 @@
 export default {
   data() {
     return {
-      slides: [
-        [
-          '20190125-一夜台北',
-          this.$images.EVENTS['20190125-一夜台北']['20190125-一夜台北1'],
-        ],
-        [
-          '20181013-SFC秋祭',
-          this.$images.EVENTS['20181013-SFC秋祭']['20181011'],
-        ],
-        [
-          '20190622-慶早交流活動',
-          this.$images.EVENTS['20190622-慶早交流活動']['20190622慶早交流'],
-        ],
-      ],
-      slideIndex: 0,
+      slides: this.$setting.slideshow.slides,
+      changeInterval: this.$setting.slideshow.changeInterval,
+      index: 0,
       timer: 0,
     };
   },
+  computed: {
+    currentSlide() {
+      return this.slides[this.index];
+    },
+    slideSrc() {
+      return this.currentSlide.url;
+    },
+    slideTitle() {
+      return this.currentSlide.title;
+    },
+    dotClass() {
+      return this.dotHighlight;
+    },
+  },
   methods: {
-    plusSlides(n) {
-      this.slideIndex += n;
-      this.showSlides(this.slideIndex);
+    dotHighlight(i) {
+      return i === this.index ? 'active' : '';
     },
-    currentSlide(n) {
-      this.slideIndex = n;
-      this.showSlides(this.slideIndex);
+    slideStart() {
+      this.slideStop();
+      this.timer = setTimeout(this.slideChange, this.changeInterval, -1);
     },
-    showSlides(n) {
+    slideStop() {
       clearInterval(this.timer);
-      const slides = Array.from(document.getElementsByClassName('slide'));
-      const dots = Array.from(document.getElementsByClassName('btn-slide-dot'));
-
-      this.slideIndex = (this.slideIndex + slides.length) % slides.length;
-
-      slides.forEach((slide) => slide.style.setProperty('display', 'none'));
-      dots.forEach((dot) => dot.classList.remove('active'));
-
-      slides[this.slideIndex].style.setProperty('display', 'block');
-      dots[this.slideIndex].classList.add('active');
-      this.timer = setTimeout(this.plusSlides, this.$setting.slide.time, 1);
+    },
+    slideChange(indexIncrement) {
+      this.index = (this.index + indexIncrement + this.slides.length) % this.slides.length;
+      this.slideStart();
+    },
+    slideJump(index) {
+      this.index = index;
+      this.slideStart();
     },
   },
   mounted() {
-    this.showSlides(this.slideIndex);
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
+    this.slideStart();
+    this.$once('hook:beforeDestroy', this.slideStop);
   },
 };
 </script>
