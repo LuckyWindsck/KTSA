@@ -135,7 +135,7 @@ export default {
     },
     slideStart() {
       this.slideStop();
-      this.timer = setTimeout(this.slideChange, this.changeInterval, -1);
+      this.timer = setTimeout(this.slideChange, this.changeInterval, 1);
     },
     slideStop() {
       clearInterval(this.timer);
