@@ -16,10 +16,12 @@
 </template>
 
 <script>
+import settings from '@/config/settings';
+
 export default {
   computed: {
     mail() {
-      return this.settings.ktsa.contacts.mail.url;
+      return settings.ktsa.contacts.mail.url;
     },
   },
 };

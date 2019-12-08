@@ -20,15 +20,26 @@
 </template>
 
 <script>
+import settings from '@/config/settings';
+
 export default {
+  data() {
+    return {
+      contacts: {
+        facebook: {
+          url: 'https://www.facebook.com/keiotaiwan/',
+          image: this.$images.HOME.facebook[settings.locale],
+        },
+        line: {
+          url: 'https://linecorp.com/',
+          image: this.$images.HOME.line[settings.locale],
+        },
+      },
+    };
+  },
   computed: {
     campuses() {
-      return this.settings.campuses;
-    },
-    contacts() {
-      return Object.values(this.settings.ktsa.contacts).filter(
-        (contact) => contact.image() !== undefined,
-      );
+      return settings.campuses;
     },
   },
 };

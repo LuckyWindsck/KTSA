@@ -1,10 +1,11 @@
 import Vue from 'vue';
-import Global from './plugins/global';
+import GlobalComponentsRegistration from './plugins/global-components-registration';
+import GlobalImagesProperty from './plugins/global-images-property';
 import router from './router';
 import store from './store';
 
-const files = require.context('./', true, /\.vue$/i);
-Vue.use(Global, { files });
+Vue.use(GlobalComponentsRegistration);
+Vue.use(GlobalImagesProperty);
 
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({

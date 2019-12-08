@@ -1,6 +1,6 @@
 <template>
   <a :href="this.contact.url">
-    <img class="invitation-link" :src="this.contact.image()" />
+    <img class="invitation-link" :src="this.contact.image" />
   </a>
 </template>
 

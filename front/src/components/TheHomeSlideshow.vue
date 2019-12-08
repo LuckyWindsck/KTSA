@@ -21,19 +21,32 @@
 </template>
 
 <script>
+import settings from '@/config/settings';
+
 export default {
   data() {
     return {
+      slides: [
+        {
+          title: '20190125-一夜台北',
+          url: this.$images.EVENTS['20190125-一夜台北']['20190125-一夜台北1'],
+        },
+        {
+          title: '20181013-SFC秋祭',
+          url: this.$images.EVENTS['20181013-SFC秋祭']['20181011'],
+        },
+        {
+          title: '20190622-慶早交流活動',
+          url: this.$images.EVENTS['20190622-慶早交流活動']['20190622慶早交流'],
+        },
+      ],
       index: 0,
       timer: 0,
     };
   },
   computed: {
-    slides() {
-      return this.settings.slideshow.slides;
-    },
     changeInterval() {
-      return this.settings.slideshow.changeInterval;
+      return settings.slideshow.changeInterval;
     },
     currentSlide() {
       return this.slides[this.index];
@@ -84,9 +97,9 @@ export default {
 .slide {
   display: block;
   overflow: hidden;
+
   /* use grid to calculate width and height */
   /* width : height = 1 : 2 */
-
   width: calc(7 / 12 * 100vw);
   height: calc(3.5 / 12 * 100vw);
 

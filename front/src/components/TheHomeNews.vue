@@ -12,3 +12,15 @@
     </div>
   </section>
 </template>
+
+<script>
+import news from '@/config/news';
+
+export default {
+  data() {
+    return {
+      news,
+    };
+  },
+};
+</script>

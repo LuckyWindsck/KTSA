@@ -2,7 +2,7 @@
   <header>
     <img
       class="cover-photo"
-      :src="this.images.LAYOUT.CoverPhoto"
+      :src="this.$images.LAYOUT.CoverPhoto"
       alt="KTSA cover photo"
     />
   </header>

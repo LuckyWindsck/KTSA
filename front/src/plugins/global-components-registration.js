@@ -7,7 +7,8 @@
  */
 
 export default {
-  install(vue, { files }) {
+  install(vue) {
+    const files = require.context('@/components', true, /\.vue$/i);
     files.keys().forEach((key) => {
       vue.component(
         key.replace(/.*\/(.*?)((Component)?)\.vue/, '$1') // Get the component name
@@ -17,5 +18,5 @@ export default {
         files(key).default,
       );
     });
-  },
+  }
 };
