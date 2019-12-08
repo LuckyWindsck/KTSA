@@ -34,6 +34,30 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    signOut() {
+      this.$store.commit('account/logout');
+      this.$router.push('login');
+    },
+  },
+  computed: {
+    login() {
+      return this.$store.state.account.login;
+    },
+  },
+  mounted() {
+    if (!this.login) {
+      this.$router.push('login');
+    }
+  },
+};
+</script>
+
 <style scoped>
 .admin-dashboard {
   height: 100vh;
@@ -197,27 +221,3 @@
   background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    signOut() {
-      this.$store.commit('account/logout');
-      this.$router.push('login');
-    },
-  },
-  computed: {
-    login() {
-      return this.$store.state.account.login;
-    },
-  },
-  mounted() {
-    if (!this.login) {
-      this.$router.push('login');
-    }
-  },
-};
-</script>

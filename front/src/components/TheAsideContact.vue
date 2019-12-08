@@ -6,7 +6,7 @@
           v-for="(campus, i) in this.campuses"
           :key="i"
           :campus="campus"
-        ></ktsa-campus-link>
+        />
       </ul>
     </section>
     <section class="invitation-section">
@@ -14,10 +14,25 @@
         v-for="(contact, i) in this.contacts"
         :key="i"
         :contact="contact"
-      ></ktsa-invitation-link>
+      />
     </section>
   </section>
 </template>
+
+<script>
+export default {
+  computed: {
+    campuses() {
+      return this.settings.campuses;
+    },
+    contacts() {
+      return Object.values(this.settings.ktsa.contacts).filter(
+        (contact) => contact.image() !== undefined,
+      );
+    },
+  },
+};
+</script>
 
 <style scoped>
 .campus-section {
@@ -42,18 +57,3 @@
   line-height: 1.5em;
 }
 </style>
-
-<script>
-export default {
-  computed: {
-    campuses() {
-      return this.settings.campuses;
-    },
-    contacts() {
-      return Object.values(this.settings.ktsa.contacts).filter(
-        (contact) => contact.image() !== undefined,
-      );
-    },
-  },
-};
-</script>

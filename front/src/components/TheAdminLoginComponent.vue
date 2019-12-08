@@ -25,6 +25,28 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      username: 'admin',
+      password: 'pass',
+    };
+  },
+  methods: {
+    signIn() {
+      const validUsername = this.username === 'admin';
+      const validPassword = this.password === 'pass';
+      if (!validUsername) console.log('Invalid username');
+      if (!validPassword) console.log('Invalid password');
+      if (!validUsername || !validPassword) return;
+      this.$store.commit('account/login');
+      this.$router.push('dashboard');
+    },
+  },
+};
+</script>
+
 <style scoped>
 .admin-login {
   height: 100vh;
@@ -123,25 +145,3 @@
   background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      username: 'admin',
-      password: 'pass',
-    };
-  },
-  methods: {
-    signIn() {
-      const validUsername = this.username === 'admin';
-      const validPassword = this.password === 'pass';
-      if (!validUsername) console.log('Invalid username');
-      if (!validPassword) console.log('Invalid password');
-      if (!validUsername || !validPassword) return;
-      this.$store.commit('account/login');
-      this.$router.push('dashboard');
-    },
-  },
-};
-</script>

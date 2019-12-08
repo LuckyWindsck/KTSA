@@ -42,7 +42,3 @@
   grid-column: 2;
 }
 </style>
-
-<script>
-export default {};
-</script>

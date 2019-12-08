@@ -31,7 +31,3 @@
   background-color: var(--KTSA-bg-blue);
 }
 </style>
-
-<script>
-export default {};
-</script>

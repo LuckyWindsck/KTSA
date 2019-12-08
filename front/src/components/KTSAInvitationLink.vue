@@ -4,14 +4,6 @@
   </a>
 </template>
 
-<style scoped>
-.invitation-link {
-  width: 100%;
-
-  border-radius: 1em;
-}
-</style>
-
 <script>
 export default {
   props: {
@@ -22,3 +14,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.invitation-link {
+  width: 100%;
+
+  border-radius: 1em;
+}
+</style>

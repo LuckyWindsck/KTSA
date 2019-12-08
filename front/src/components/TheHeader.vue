@@ -15,7 +15,3 @@
   width: 100vw;
 }
 </style>
-
-<script>
-export default {};
-</script>

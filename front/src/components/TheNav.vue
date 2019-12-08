@@ -1,55 +1,41 @@
 <template>
   <nav>
-    <div class="nav_row">
-      <router-link to="/home">HOME</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/news">NEWS</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/about-us">US</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/members">MEMBERS</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/events">EVENTS</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/campus">CAMPUS</router-link>
-    </div>
-    <div class="nav_row">
-      <router-link to="/contact">CONTACT</router-link>
-    </div>
-    <div class="nav_row" v-if="this.dev">
-      <router-link to="/admin">ADMIN</router-link>
+    <div class="nav_row" v-for="([url, text], i) in this.nav" :key="i">
+      <router-link :to="url">{{ text }}</router-link>
     </div>
   </nav>
 </template>
-
-<style scoped>
-.nav_row {
-  &:nth-child(1) {
-    @mixin ktsa_nav 1, false;
-    background-color: #b7bdca;
-  }
-  &:nth-child(2n + 2) {
-    @mixin ktsa_nav;
-    background-color: #e4e4e4;
-  }
-  &:nth-child(2n + 3) {
-    @mixin ktsa_nav;
-    background-color: #e9e1b5;
-  }
-}
-</style>
 
 <script>
 export default {
   data() {
     return {
-      dev: process.env.NODE_ENV === 'development',
+      nav: [
+        ['/home', 'HOME'],
+        ['/news', 'NEWS'],
+        ['/about-us', 'ABOUT US'],
+        ['/members', 'MEMBERS'],
+        ['/events', 'EVENTS'],
+        ['/campus', 'CAMPUS'],
+        ['/contact', 'CONTACT'],
+        ['/admin', 'ADMIN'],
+      ].slice(0, process.env.NODE_ENV === 'development' ? undefined : -1),
     };
   },
 };
 </script>
+
+<style scoped>
+.nav_row:nth-child(1) {
+  background-color: #b7bdca;
+  @mixin ktsa_nav 1, false;
+}
+.nav_row:nth-child(2n + 2) {
+  background-color: #e4e4e4;
+  @mixin ktsa_nav;
+}
+.nav_row:nth-child(2n + 3) {
+  background-color: #e9e1b5;
+  @mixin ktsa_nav;
+}
+</style>

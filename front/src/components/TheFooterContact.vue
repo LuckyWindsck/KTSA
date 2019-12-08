@@ -15,14 +15,6 @@
   </section>
 </template>
 
-<style scoped>
-.footer-link {
-  color: var(--KTSA-fg-blue);
-
-  font-size: 1.5rem;
-}
-</style>
-
 <script>
 export default {
   computed: {
@@ -32,3 +24,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.footer-link {
+  color: var(--KTSA-fg-blue);
+
+  font-size: 1.5rem;
+}
+</style>

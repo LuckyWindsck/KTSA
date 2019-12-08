@@ -1,10 +1,7 @@
 <template>
   <section>
     <div class="logo-frame">
-      <img
-        class="logo-image"
-        :src="this.images.HOME.Logo"
-      />
+      <img class="logo-image" :src="this.images.HOME.Logo" />
     </div>
     <h1 class="logo-caption">
       <span class="logo-caption-block">Keio Taiwanese</span>
@@ -47,7 +44,3 @@
   display: block;
 }
 </style>
-
-<script>
-export default {};
-</script>
