@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "prod": "webpack",
-    "server": "node src/app.js"
+    "server": "node src/server/app.js"
   },
   "author": "LuckyWind_sck <luckywindsck@gmail.com>",
   "license": "MIT",
