@@ -4,6 +4,6 @@ const path = require('path');
 
 express()
   .use(history())
-  .use(express.static(path.resolve(`${__dirname}/../dist`)))
+  .use(express.static(path.resolve(__dirname, '../../dist')))
   .get('/', (_, res) => res.sendFile('index.html'))
-  .listen(3000, () => console.log('Example app listening on port 3000!'));
+  .listen(3000, () => console.log('Test production server listening on port 3000!'));
