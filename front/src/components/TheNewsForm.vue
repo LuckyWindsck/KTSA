@@ -1,71 +1,61 @@
 <template>
-  <div class="admin-dashboard">
-    <form
-      class="form-dashboard"
-      action=""
-      method=""
-      @submit.prevent="createPost"
-    >
-      <div class="header-dashboard">
-        <h1 class="title-dashboard">Dashboard</h1>
-      </div>
-      <div class="body-dashboard">
-        <label class="label-dashboard" for="title">Title</label>
-        <input class="text-input-dashboard" type="text" id="title" />
-        <label class="label-dashboard" for="content">Content</label>
-        <textarea class="textarea-dashboard" id="content" />
-        <label class="label-dashboard" for="image">Image</label>
-        <input
-          class="file-input-dashboard"
-          type="file"
-          id="image"
-          accept="image/*"
-        />
-        <button class="btn-submit-dashboard" type="submit">
-          Create a post
-        </button>
-      </div>
-    </form>
-    <form class="form-dashboard" action="" method="" @submit.prevent="signOut">
-      <div class="body-dashboard">
-        <button class="btn-logout" type="submit">Log out</button>
-      </div>
-    </form>
-  </div>
+  <form class="form-dashboard" action="" method="" @submit.prevent="createPost">
+    <div class="header-dashboard">
+      <h1 class="title-dashboard">Dashboard</h1>
+    </div>
+    <div class="body-dashboard">
+      <label class="label-dashboard" for="title">Title</label>
+      <input
+        class="text-input-dashboard"
+        type="text"
+        id="title"
+        v-model="title"
+      />
+      <label class="label-dashboard" for="content">Content</label>
+      <textarea class="textarea-dashboard" id="content" v-model="content" />
+      <button class="btn-submit-dashboard" type="submit">
+        Create a post
+      </button>
+    </div>
+  </form>
 </template>
 
 <script>
 export default {
+  props: ['headers'],
   data() {
-    return {};
+    return {
+      title: '',
+      content: '',
+      token: '',
+    };
   },
   methods: {
-    signOut() {
-      this.$store.commit('account/logout');
-      this.$router.push('login');
+    createPost() {
+      const time = ((d) => `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`)(new Date());
+      const payload = {
+        author: 'Lin',
+        title: this.title,
+        image: '',
+        content: this.content,
+        created_at: time,
+        updated_at: time,
+      };
+
+      this.$axios
+        .post('/api/news/', payload, this.headers)
+        .then((response) => {
+          console.log(response.data);
+          this.title = '';
+          this.content = '';
+        })
+        .catch((error) => console.log(error));
     },
-  },
-  computed: {
-    login() {
-      return this.$store.state.account.login;
-    },
-  },
-  mounted() {
-    if (!this.login) {
-      this.$router.push('login');
-    }
   },
 };
 </script>
 
 <style scoped>
-.admin-dashboard {
-  height: 100vh;
-
-  background-color: #f9f9f9;
-
-  font-family: BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-}
 .form-dashboard {
   width: 50vw;
   margin: 0 auto;
@@ -122,6 +112,7 @@ export default {
 .textarea-dashboard {
   display: block;
 
+  height: 25vh;
   width: calc(100% - 2em);
   margin-bottom: 1em;
   padding: 0.5em 1em;
@@ -183,27 +174,6 @@ export default {
   line-height: 1.25em;
 }
 .btn-submit-dashboard {
-  display: block;
-
-  width: 100%;
-  padding: 0.5em 1em;
-
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-
-  color: #fff;
-  border: 1px solid rgba(27, 31, 35, 0.2);
-  border-radius: 0.25em;
-  outline: none;
-  background-color: #28a745;
-  background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
-
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 1.25em;
-}
-.btn-logout {
   display: block;
 
   width: 100%;

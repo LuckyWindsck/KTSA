@@ -3,11 +3,13 @@ const state = {
 };
 
 const mutations = {
-  login() {
+  login(_, token) {
     Object.assign(state, { login: true });
+    sessionStorage.setItem('token', token);
   },
   logout() {
     Object.assign(state, { login: false });
+    sessionStorage.removeItem('token');
   },
 };
 

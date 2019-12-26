@@ -47,12 +47,12 @@ export default () => [
   {
     path: '/login',
     name: 'login',
-    component: Vue.component('the-admin-login'),
+    component: Vue.component('the-login'),
   },
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: Vue.component('the-admin-dashboard'),
+    component: Vue.component('the-dashboard'),
     alias: '/admin',
   },
   {

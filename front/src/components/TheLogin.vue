@@ -1,6 +1,6 @@
 <template>
   <div class="admin-login">
-    <form class="form-login" action="" method="" @submit.prevent="signIn">
+    <form class="form-login" @submit.prevent="signIn">
       <div class="header-login">
         <h1 class="title-login">Log in to KTSA Dashboard</h1>
       </div>
@@ -29,20 +29,29 @@
 export default {
   data() {
     return {
-      username: 'admin',
-      password: 'pass',
+      username: '',
+      password: '',
     };
   },
   methods: {
     signIn() {
-      const validUsername = this.username === 'admin';
-      const validPassword = this.password === 'pass';
-      if (!validUsername) console.log('Invalid username');
-      if (!validPassword) console.log('Invalid password');
-      if (!validUsername || !validPassword) return;
-      this.$store.commit('account/login');
-      this.$router.push('dashboard');
+      const payload = {
+        username: this.username,
+        password: this.password,
+      };
+
+      this.$axios
+        .post('/api/login/', payload)
+        .then((response) => {
+          const token = response.data.access_token;
+          this.$store.commit('account/login', token);
+          this.$router.push('dashboard');
+        })
+        .catch((error) => console.log(error));
     },
+  },
+  mounted() {
+    if (sessionStorage.getItem('token')) this.$router.push('dashboard');
   },
 };
 </script>
