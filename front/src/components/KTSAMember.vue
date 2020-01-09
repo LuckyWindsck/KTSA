@@ -1,9 +1,9 @@
 <template>
   <figure class="member-figure">
-    <img class="about-us-image" :src="photoSrc" alt="" />
+    <img class="member-image" :src="photoSrc" alt="" />
     <figcaption>
       <p>{{ role }}</p>
-      <p>{{ name }}</p>
+      <p>{{ nameCampus }}</p>
     </figcaption>
   </figure>
 </template>
@@ -13,13 +13,17 @@ export default {
   props: ['member'],
   computed: {
     role() {
-      return this.member ? this.member.role.join(' & ') : '';
+      const { role } = this.member;
+      return role.join(' & ');
     },
-    name() {
-      return this.member ? [this.member.name, this.member.otherName].filter((e) => e).join(' / ') : '';
+    nameCampus() {
+      const { name, otherName, campus } = this.member;
+      const wholeName = [name, otherName].filter((e) => e).join(' / ');
+      return `${wholeName} (${campus})`;
     },
     photoSrc() {
-      return this.member ? this.$images.MEMBERS[this.member.photoName || 'Default'] : '';
+      const { photoName } = this.member;
+      return this.$images.MEMBERS[photoName || 'Default'];
     },
   },
 };
@@ -27,6 +31,11 @@ export default {
 
 <style scoped>
 .member-figure {
+  width: 100%;
+
   text-align: center;
+}
+.member-image {
+  width: 100%;
 }
 </style>

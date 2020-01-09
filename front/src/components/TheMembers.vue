@@ -4,7 +4,8 @@
     <article class="members-content">
       <div class="members-list" v-for="(row, r) in this.members" :key="r">
         <div class="members-cell" v-for="(col, c) in row" :key="c">
-          <ktsa-member :member="col" />
+          <div v-if="col === undefined" />
+          <ktsa-member :member="col" v-else />
         </div>
       </div>
     </article>
