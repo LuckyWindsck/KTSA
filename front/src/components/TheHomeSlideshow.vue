@@ -94,17 +94,6 @@ export default {
 }
 .slide {
   width: 100%;
-
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 .slide-image {
   display: block;
