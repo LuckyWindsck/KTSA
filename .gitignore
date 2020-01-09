@@ -1,7 +1,1 @@
 .DS_Store
-
-front/node_modules/
-front/dist/
-front/src/images/
-front/src/config/members.js
-front/src/config/news.js
