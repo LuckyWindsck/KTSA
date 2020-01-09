@@ -1,7 +1,7 @@
 <template>
   <section class="ktsa-home">
     <section class="home-main">
-      <!-- <the-home-slideshow class="home-slideshow" /> -->
+      <the-home-slideshow class="home-slideshow" />
       <the-home-news class="home-news" />
     </section>
     <the-aside class="home-aside" />
@@ -29,8 +29,8 @@
   @mixin ktsa_section;
 }
 .home-news {
-  @mixin ktsa_section;
   overflow: auto;
+  @mixin ktsa_section;
 }
 .home-aside {
   display: table;
@@ -39,8 +39,8 @@
 
   color: var(--KTSA-fg-blue);
 
-  @mixin ktsa_section;
-
   grid-column: 2;
+
+  @mixin ktsa_section;
 }
 </style>

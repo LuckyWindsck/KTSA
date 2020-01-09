@@ -28,16 +28,16 @@ export default {
     return {
       slides: [
         {
-          title: '20190125-一夜台北',
-          url: this.$images.EVENTS['20190125-一夜台北']['20190125-一夜台北1'],
+          title: '一夜台北',
+          url: this.$images.EVENTS['20190125_一夜台北']['0'],
         },
         {
-          title: '20181013-SFC秋祭',
-          url: this.$images.EVENTS['20181013-SFC秋祭']['20181011'],
+          title: '慶早交流活動',
+          url: this.$images.EVENTS['20190622_慶早交流活動']['0'],
         },
         {
-          title: '20190622-慶早交流活動',
-          url: this.$images.EVENTS['20190622-慶早交流活動']['20190622慶早交流'],
+          title: '三田祭台灣屋台',
+          url: this.$images.EVENTS['20191121-24_三田祭台灣屋台']['0'],
         },
       ],
       index: 0,
@@ -91,17 +91,9 @@ export default {
 <style scoped>
 .slide-container {
   position: relative;
-
-  max-width: 1000px;
 }
 .slide {
-  display: block;
-  overflow: hidden;
-
-  /* use grid to calculate width and height */
-  /* width : height = 1 : 2 */
-  width: calc(7 / 12 * 100vw);
-  height: calc(3.5 / 12 * 100vw);
+  width: 100%;
 
   animation-name: fade;
   animation-duration: 1.5s;
@@ -125,17 +117,16 @@ export default {
   top: 50%;
 
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  margin-top: -1em;
+  padding: 1em;
 
   cursor: pointer;
   user-select: none;
   transition: 0.6s ease;
 
-  color: white;
-  border-radius: 0 3px 3px 0;
+  color: rgba(0, 0, 0, 0.8);
 
-  font-size: 18px;
+  font-size: 1em;
   font-weight: bold;
 }
 .btn-next-slide {
@@ -145,7 +136,7 @@ export default {
 }
 .btn-prev-slide:hover,
 .btn-next-slide:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--KTSA-bg-blue);
 }
 .slide-menu {
   display: grid;
