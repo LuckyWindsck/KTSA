@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <div class="nav_row" v-for="([url, text], i) in this.nav" :key="i">
-      <router-link :to="url">{{ text }}</router-link>
+    <div class="nav-row" v-for="([url, text], i) in this.nav" :key="i">
+      <router-link class="nav-link" :to="url">{{ text }}</router-link>
     </div>
   </nav>
 </template>
@@ -25,22 +25,39 @@ export default {
 </script>
 
 <style scoped>
-a {
+.nav-link {
   text-decoration: none;
 }
 
-.nav_row:nth-child(1) {
+.nav-link:before {
+  display: inline-block;
+
+  width: 1em;
+
+  content: "\2022";
+
+  color: black;
+
+  font-weight: bold;
+}
+
+.nav-row:nth-child(1) {
   background-color: var(--KTSA-bg-blue);
 
   font-weight: bold;
   @mixin ktsa_nav 1, false;
 }
-.nav_row:nth-child(2n + 2) {
+.nav-row:nth-child(2n + 2) {
   background-color: var(--KTSA-bg-layout);
   @mixin ktsa_nav;
 }
-.nav_row:nth-child(2n + 3) {
+.nav-row:nth-child(2n + 3) {
   background-color: var(--KTSA-bg-yellow);
   @mixin ktsa_nav;
+}
+
+.nav-row:nth-child(n + 2) .nav-link.router-link-active,
+.nav-row:nth-child(n + 2) .nav-link.router-link-active:before {
+  color: var(--KTSA-fg-red);
 }
 </style>

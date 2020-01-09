@@ -36,16 +36,21 @@ module.exports = {
           };
         },
         ktsa_nav(mixin, padLeft = 2, border = 'true') {
-          return {
-            display: 'list-item',
+          const css = {
+            // display: 'list-item',
             'padding-left': `${Number(padLeft)}rem`,
-            'border-color': border === 'true' ? `${variables['--KTSA-fg-blue']}` : '',
-            'border-top': border === 'true' ? '0.125rem dotted' : '',
-            'list-style': 'disc',
-            'list-style-position': 'inside',
+            // 'list-style': 'disc',
+            // 'list-style-position': 'inside',
             'line-height': '3em',
             'font-size': '1.5rem',
           };
+          if (border === 'true') {
+            Object.assign(css, {
+              'border-color': `${variables['--KTSA-fg-blue']}`,
+              'border-top': '0.125rem dotted',
+            });
+          }
+          return css;
         },
       },
     },
