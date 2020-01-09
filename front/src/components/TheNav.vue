@@ -31,16 +31,17 @@ a {
 }
 
 .nav_row:nth-child(1) {
-  background-color: #b7bdca;
+  background-color: var(--KTSA-bg-blue);
+
   font-weight: bold;
   @mixin ktsa_nav 1, false;
 }
 .nav_row:nth-child(2n + 2) {
-  background-color: #e4e4e4;
+  background-color: var(--KTSA-bg-layout);
   @mixin ktsa_nav;
 }
 .nav_row:nth-child(2n + 3) {
-  background-color: #e9e1b5;
+  background-color: var(--KTSA-bg-yellow);
   @mixin ktsa_nav;
 }
 </style>
