@@ -2,7 +2,13 @@
   <router-view />
 </template>
 
-<style>
+<script>
+export default {
+
+};
+</script>
+
+<style scoped>
 body {
   margin: 0;
 

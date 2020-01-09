@@ -8,6 +8,12 @@
   </section>
 </template>
 
+<script>
+export default {
+
+};
+</script>
+
 <style scoped>
 .ktsa-home {
   display: grid;

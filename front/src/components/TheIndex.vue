@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script>
+export default {
+
+};
+</script>
+
 <style scoped>
 .background {
   min-height: 100vh;
