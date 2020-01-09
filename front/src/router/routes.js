@@ -33,11 +33,6 @@ export default () => [
         component: Vue.component('the-events'),
       },
       {
-        path: 'campus',
-        name: 'campus',
-        component: Vue.component('the-campus'),
-      },
-      {
         path: 'contact',
         name: 'contact',
         component: Vue.component('the-contact'),
