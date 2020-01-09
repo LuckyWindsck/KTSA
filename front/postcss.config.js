@@ -20,6 +20,21 @@ module.exports = {
             'box-shadow': `0px 0px 0.5rem ${variables['--KTSA-bg-caption']}`,
           };
         },
+        ktsa_page_title() {
+          return {
+            padding: '1em 0 1em 1em',
+            'border-color': 'black',
+            'border-bottom': `0.2rem solid ${variables['--KTSA-fg-blue']}`,
+            'background-color': `${variables['--KTSA-bg-blue']}`,
+            'font-size': '1.5em',
+            'font-weight': 'bold',
+          };
+        },
+        ktsa_page_content() {
+          return {
+            padding: '2em',
+          };
+        },
         ktsa_nav(mixin, padLeft = 2, border = 'true') {
           return {
             display: 'list-item',
