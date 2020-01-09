@@ -16,7 +16,6 @@ export default {
         ['/about-us', 'ABOUT US'],
         ['/members', 'MEMBERS'],
         ['/events', 'EVENTS'],
-        ['/campus', 'CAMPUS'],
         ['/contact', 'CONTACT'],
         ['/admin', 'ADMIN'],
       ].slice(0, process.env.NODE_ENV === 'development' ? undefined : -1),
