@@ -15,7 +15,7 @@
   background: var(--KTSA-bg-layout);
 }
 .layout {
-  margin: 0 10vh;
+  margin: 0 15vh;
 }
 .main {
   display: grid;
