@@ -2,6 +2,16 @@
   <section class="ktsa-contact">
     <div class="contact-title">・CONTACT</div>
     <article class="contact-content">
+      <p>
+        Facebook:
+        <a href="https://www.facebook.com/keiotaiwan/"
+          >慶應義塾大学台湾人留学生会</a
+        ><br />
+        Email: <a :href="`mailto:${this.mail}`">{{ this.mail }}</a
+        ><br />
+        Twitter：<a href="https://twitter.com/keiotaiwan/">@keiotaiwan</a><br />
+      </p>
+
       <h1>三田キャンパス</h1>
       <p>
         住所｜〒108-8345　東京都港区三田2-15-45<br />
@@ -25,8 +35,14 @@
 </template>
 
 <script>
-export default {
+import settings from '@/config/settings';
 
+export default {
+  computed: {
+    mail() {
+      return settings.ktsa.contacts.mail.url;
+    },
+  },
 };
 </script>
 
