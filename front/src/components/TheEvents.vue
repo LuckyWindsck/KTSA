@@ -20,7 +20,7 @@ export default {
 .events-title {
   @mixin ktsa_page_title;
 }
-.about-us-content {
+.events-content {
   @mixin ktsa_page_content;
 }
 </style>

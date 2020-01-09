@@ -20,7 +20,7 @@ export default {
 .contact-title {
   @mixin ktsa_page_title;
 }
-.about-us-content {
+.contact-content {
   @mixin ktsa_page_content;
 }
 </style>

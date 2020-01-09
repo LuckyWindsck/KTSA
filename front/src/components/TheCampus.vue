@@ -20,7 +20,7 @@ export default {
 .campus-title {
   @mixin ktsa_page_title;
 }
-.about-us-content {
+.campus-content {
   @mixin ktsa_page_content;
 }
 </style>

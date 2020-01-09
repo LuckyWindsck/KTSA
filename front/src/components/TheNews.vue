@@ -20,7 +20,7 @@ export default {
 .news-title {
   @mixin ktsa_page_title;
 }
-.about-us-content {
+.news-content {
   @mixin ktsa_page_content;
 }
 </style>
