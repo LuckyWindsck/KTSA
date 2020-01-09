@@ -12,9 +12,6 @@
           >Privacy Policy</router-link
         >
       </p>
-      <p>
-        <a class="footer-link" href>Site Policy</a>
-      </p>
     </section>
   </footer>
 </template>
