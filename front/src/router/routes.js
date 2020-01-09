@@ -42,6 +42,11 @@ export default () => [
         name: 'contact',
         component: Vue.component('the-contact'),
       },
+      {
+        path: 'privacy',
+        name: 'privacy',
+        component: Vue.component('the-privacy'),
+      },
     ],
   },
   {
