@@ -38,7 +38,8 @@
   text-align: center;
 
   color: var(--KTSA-fg-blue);
-  border: 0.1rem solid var(--KTSA-fg-blue);
+
+  @mixin ktsa_section;
 
   grid-column: 2;
 }

@@ -6,6 +6,7 @@
           v-for="(campus, i) in this.campuses"
           :key="i"
           :campus="campus"
+          class="campus-link"
         />
       </ul>
     </section>
@@ -58,6 +59,9 @@ export default {
   margin-left: -1.5em;
 
   list-style: none;
+}
+.campus-link {
+  text-decoration: none;
 }
 .invitation-section {
   flex-direction: column;

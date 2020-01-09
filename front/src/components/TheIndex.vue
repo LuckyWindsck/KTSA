@@ -1,12 +1,20 @@
 <template>
-  <div>
-    <the-header />
-    <the-main class="main" />
-    <the-footer class="footer" />
+  <div class="a">
+    <div class="b">
+      <the-header />
+      <the-main class="main" />
+      <the-footer class="footer" />
+    </div>
   </div>
 </template>
 
 <style scoped>
+.a {
+  background: var(--KTSA-bg-layout);
+}
+.b {
+  margin: 0 15vw;
+}
 .main {
   /* For watermark in the-footer */
   position: relative;

@@ -16,7 +16,8 @@ module.exports = {
       mixins: {
         ktsa_section() {
           return {
-            border: `0.25rem solid ${variables['--KTSA-fg-blue']}`,
+            border: `0.2rem solid ${variables['--KTSA-fg-blue']}`,
+            'box-shadow': `0px 0px 0.5rem ${variables['--KTSA-bg-caption']}`,
           };
         },
         ktsa_nav(mixin, padLeft = 2, border = 'true') {

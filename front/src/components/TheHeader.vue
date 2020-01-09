@@ -12,6 +12,6 @@
 .cover-photo {
   display: block;
 
-  width: 100vw;
+  width: 100%;
 }
 </style>

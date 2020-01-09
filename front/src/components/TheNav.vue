@@ -26,8 +26,13 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+
 .nav_row:nth-child(1) {
   background-color: #b7bdca;
+  font-weight: bold;
   @mixin ktsa_nav 1, false;
 }
 .nav_row:nth-child(2n + 2) {
