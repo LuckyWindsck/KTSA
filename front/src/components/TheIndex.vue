@@ -1,6 +1,6 @@
 <template>
-  <div class="a">
-    <div class="b">
+  <div class="background">
+    <div class="layout">
       <the-header />
       <the-main class="main" />
       <the-footer class="footer" />
@@ -9,17 +9,15 @@
 </template>
 
 <style scoped>
-.a {
+.background {
+  height: 100vh;
+
   background: var(--KTSA-bg-layout);
 }
-.b {
+.layout {
   margin: 0 15vw;
 }
 .main {
-  /* For watermark in the-footer */
-  position: relative;
-  z-index: 1;
-
   display: grid;
 
   padding: 0.5rem;
