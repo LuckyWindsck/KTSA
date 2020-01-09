@@ -4,7 +4,8 @@
       <img class="logo-image" :src="this.$images.HOME.Logo" />
     </div>
     <h1 class="logo-caption">
-      <span class="logo-caption-block">Keio Taiwanese</span>
+      <!-- <span class="logo-caption-block">慶應台灣人留學生會</span> -->
+      <span class="logo-caption-block">Keio Taiwanese </span>
       <span class="logo-caption-block">Student Association</span>
     </h1>
   </section>
@@ -27,14 +28,7 @@
 .logo-image {
   width: 100%;
 
-  /* TODO: refactor
-  2 / 12: grid
-  638 / 1063: size ratio
-  (1 - (638 / 1063)): size increased by pseudo element
-  1 / 2: half
-  3: scale(3); */
-  transform: translateY(calc((2 / 12) * (1 - (638 / 1063)) * (1 / 2) * 100vw))
-    scale(3);
+  transform: scale(1.5);
 }
 .logo-caption {
   /* disable chrome user agent stylesheet */
