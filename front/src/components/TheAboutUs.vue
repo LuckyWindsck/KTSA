@@ -55,6 +55,6 @@ export default {
   width: 100%;
 }
 .about-us-image {
-  max-width: 100%;
+  width: 100%;
 }
 </style>
