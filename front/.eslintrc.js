@@ -29,5 +29,6 @@ module.exports = {
   },
   rules: {
     'no-console': ['warn', { allow: ['log'] }],
+    'no-shadow': ['error', { allow: ['_'] }],
   },
 };
