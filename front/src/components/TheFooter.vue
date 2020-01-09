@@ -1,5 +1,39 @@
 <template>
   <footer>
-    <the-footer-contact />
+    <section>
+      <address>
+        <a class="footer-link" :href="`mailto:${this.mail}`">{{ this.mail }}</a>
+      </address>
+      <p>
+        <a class="footer-link" href>Site Map</a>
+      </p>
+      <p>
+        <a class="footer-link" href>Privacy Policy</a>
+      </p>
+      <p>
+        <a class="footer-link" href>Site Policy</a>
+      </p>
+    </section>
   </footer>
 </template>
+
+
+<script>
+import settings from '@/config/settings';
+
+export default {
+  computed: {
+    mail() {
+      return settings.ktsa.contacts.mail.url;
+    },
+  },
+};
+</script>
+
+<style>
+.footer-link {
+  color: var(--KTSA-fg-blue);
+
+  font-size: 1.5rem;
+}
+</style>
