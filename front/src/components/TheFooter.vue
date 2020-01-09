@@ -8,7 +8,9 @@
         <a class="footer-link" href>Site Map</a>
       </p>
       <p>
-        <a class="footer-link" href>Privacy Policy</a>
+        <router-link class="footer-link" to="/privacy"
+          >Privacy Policy</router-link
+        >
       </p>
       <p>
         <a class="footer-link" href>Site Policy</a>
