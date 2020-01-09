@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ktsa-contact {
   color: var(--KTSA-fg-blue);
 

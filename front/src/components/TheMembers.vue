@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ktsa-members {
   color: var(--KTSA-fg-blue);
 

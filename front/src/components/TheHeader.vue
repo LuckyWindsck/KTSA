@@ -8,6 +8,12 @@
   </header>
 </template>
 
+<script>
+export default {
+
+};
+</script>
+
 <style scoped>
 .cover-photo {
   display: block;
