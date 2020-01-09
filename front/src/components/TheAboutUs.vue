@@ -39,17 +39,10 @@ export default {
   @mixin ktsa_section;
 }
 .about-us-title {
-  padding: 1em 0 1em 1em;
-
-  border-color: black;
-  border-bottom: 0.2rem solid var(--KTSA-fg-blue);
-  background-color: var(--KTSA-bg-blue);
-
-  font-size: 1.5em;
-  font-weight: bold;
+  @mixin ktsa_page_title;
 }
 .about-us-content {
-  padding: 2em;
+  @mixin ktsa_page_content;
 }
 .about-us-figure {
   width: 100%;
