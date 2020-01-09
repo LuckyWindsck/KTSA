@@ -10,12 +10,12 @@
 
 <style scoped>
 .background {
-  height: 100vh;
+  min-height: 100vh;
 
   background: var(--KTSA-bg-layout);
 }
 .layout {
-  margin: 0 15vw;
+  margin: 0 10vh;
 }
 .main {
   display: grid;
