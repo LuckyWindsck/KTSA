@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="logo-frame">
-      <img class="logo-image" :src="this.$images.HOME.Logo" />
+      <img class="logo-image" :src="this.$images.HOME.Logo" alt="KTSA logo" />
     </div>
     <h1 class="logo-caption">
       <!-- <span class="logo-caption-block">慶應台灣人留學生會</span> -->
