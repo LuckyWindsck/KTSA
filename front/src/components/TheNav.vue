@@ -11,14 +11,15 @@ export default {
   data() {
     return {
       nav: [
-        ['/home', 'HOME'],
-        ['/news', 'NEWS'],
-        ['/about-us', 'ABOUT US'],
-        ['/members', 'MEMBERS'],
-        ['/events', 'EVENTS'],
-        ['/contact', 'CONTACT'],
-        ['/admin', 'ADMIN'],
-      ].slice(0, process.env.NODE_ENV === 'development' ? undefined : -1),
+        [{ name: 'home' }, 'HOME'],
+        [{ name: 'news' }, 'NEWS'],
+        [{ name: 'about-us' }, 'ABOUT US'],
+        [{ name: 'members' }, 'MEMBERS'],
+        [{ name: 'events' }, 'EVENTS'],
+        [{ name: 'contact' }, 'CONTACT'],
+        // [{ name: 'admin' }, 'ADMIN'],
+      ],
+      // .slice(0, process.env.NODE_ENV === 'development' ? undefined : -1),
     };
   },
 };

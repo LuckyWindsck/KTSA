@@ -22,14 +22,12 @@ export default {
   grid-column-gap: 1rem;
 }
 .home-main {
-  display: grid;
-
   grid-column: 1;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 1rem;
 }
 .home-slideshow {
   display: grid;
+
+  margin-bottom: 1em;
 
   grid-template-rows: 20fr 3fr;
   @mixin ktsa_section;
