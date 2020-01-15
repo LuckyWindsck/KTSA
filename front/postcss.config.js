@@ -37,10 +37,7 @@ module.exports = {
         },
         ktsa_nav(mixin, padLeft = 2, border = 'true') {
           const css = {
-            // display: 'list-item',
             'padding-left': `${Number(padLeft)}rem`,
-            // 'list-style': 'disc',
-            // 'list-style-position': 'inside',
             'line-height': '3em',
             'font-size': '1.5rem',
           };

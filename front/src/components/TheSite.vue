@@ -15,6 +15,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a:link,
 a:visited {
   color: var(--KTSA-fg-blue);
 }
