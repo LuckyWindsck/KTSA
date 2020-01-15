@@ -1,5 +1,5 @@
 node_modules/
 dist/
 src/images/
-src/config/members.js
-src/config/news.js
+src/config/
+!src/config/settings.js

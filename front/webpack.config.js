@@ -13,6 +13,9 @@ const strategy = {
 };
 
 const common = {
+  output: {
+    publicPath: '/',
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),

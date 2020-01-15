@@ -13,9 +13,15 @@ export default () => [
         alias: '',
       },
       {
-        path: 'news',
-        name: 'news',
+        path: 'news/:news_id?',
         component: Vue.component('the-news'),
+        children: [
+          {
+            path: '',
+            name: 'news',
+            component: Vue.component('ktsa-news'),
+          },
+        ],
       },
       {
         path: 'about-us',
@@ -28,9 +34,15 @@ export default () => [
         component: Vue.component('the-members'),
       },
       {
-        path: 'events',
-        name: 'events',
+        path: 'events/:event_id?',
         component: Vue.component('the-events'),
+        children: [
+          {
+            path: '',
+            name: 'events',
+            component: Vue.component('ktsa-event'),
+          },
+        ],
       },
       {
         path: 'contact',
@@ -42,6 +54,11 @@ export default () => [
         name: 'privacy',
         component: Vue.component('the-privacy'),
       },
+      {
+        path: 'sitemap',
+        name: 'sitemap',
+        component: Vue.component('the-sitemap'),
+      },
     ],
   },
   {
@@ -50,10 +67,10 @@ export default () => [
     component: Vue.component('the-login'),
   },
   {
-    path: '/dashboard',
-    name: 'dashboard',
+    path: '/admin',
+    name: 'admin',
     component: Vue.component('the-dashboard'),
-    alias: '/admin',
+    alias: '/dashboard',
   },
   {
     path: '*',
