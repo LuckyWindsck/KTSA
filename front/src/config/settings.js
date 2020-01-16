@@ -22,35 +22,6 @@ const settings = {
       },
     },
   },
-  campuses: [
-    {
-      name: {
-        en: 'Mita',
-        ja: '三田',
-        zh_tw: '三田',
-      },
-      address: '',
-      url: '',
-    },
-    {
-      name: {
-        en: 'Hiyoshi',
-        ja: '日吉',
-        zh_tw: '日吉',
-      },
-      address: '',
-      url: '',
-    },
-    {
-      name: {
-        en: 'SFC',
-        ja: '湘南藤沢',
-        zh_tw: '湘南藤澤',
-      },
-      address: '',
-      url: 'https://www.sfc.keio.ac.jp/',
-    },
-  ],
 };
 
 export default settings;
