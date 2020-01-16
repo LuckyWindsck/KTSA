@@ -36,7 +36,7 @@ What's akisai?
       },
     },
     ja: {
-      title: '',
+      title: 'SFC秋祭',
       content: `去年の三田祭で大好評だった台湾屋台が帰ってきた！
 この度、慶應台湾人留学生会は本場の台湾点心を販売いたします！
 今回は、香ばしくて焼き上げた蔥抓餅（ツォンジュアビン）とモチモチ食感のタピオカミルクティーをご用意しております！
@@ -55,7 +55,7 @@ What's akisai?
     date: '2019.06.05',
     'zh-TW': {
       title: '早慶交流活動',
-      content: `【慶應&早稻田交流活動】#活動資訊
+      content: `【慶應&早稻田交流活動】
 活動時間：6/22(土) 12:30-17:30 (晚餐聚餐18：00~20：00)
 活動地點：早稻田大學本校區
 集合地點：早稻田大學早稻田大學3號館710教室
@@ -84,7 +84,7 @@ Graduate students,OBOGs, and language school students are also welcomed`,
       },
     },
     ja: {
-      title: '',
+      title: '慶早交流イベント',
       content: `【慶早交流イベント】
 時間：6/22(土) 12:30-17:30 (アフターパーティー18：00~20：00)
 場所：早稲田大学本キャンパス
@@ -102,7 +102,7 @@ Graduate students,OBOGs, and language school students are also welcomed`,
   {
     date: '2019.06.16',
     'zh-TW': {
-      title: 'KTSA幹部招募',
+      title: 'TTSA幹部招募',
       content: `【2019年度TTSA幹部二次招募】
 🔸履歷連結
 招募時間：6/16 ~ 6/25
@@ -125,7 +125,7 @@ Graduate students,OBOGs, and language school students are also welcomed`,
       },
     },
     en: {
-      title: 'KTSA staff recruitment',
+      title: 'TTSA staff recruitment',
       content: `[2019 TTSA staff recruitment second phase]
 Please check the link below
 🔸Resume
@@ -149,7 +149,7 @@ Please send the resume to ttsa.new@gmail.com. We will contact you and inform the
       },
     },
     ja: {
-      title: '',
+      title: 'TTSA幹部募集',
       content: `【2019 TTSA幹部募集】
 下記のリンクをご確認ください
 🔸履歴書
@@ -176,7 +176,7 @@ ESを入力した上で、ttsa.new@gmail.comに送ってください。面接時
   {
     date: '2019.07.02',
     'zh-TW': {
-      title: '足立花火大會資訊',
+      title: '足立花火大會',
       content: `各位同學大家午安！
 7/20在足立有花火大會，歡迎大家一起來參加🎆
 報名表單`,
@@ -185,7 +185,7 @@ ESを入力した上で、ttsa.new@gmail.comに送ってください。面接時
       },
     },
     en: {
-      title: 'Adachi firework event information',
+      title: 'Adachi firework Event',
       content: `Hello everyone!
 There’s a firework event coming up on 7/20, come join!
 Please sign up first!
@@ -195,7 +195,7 @@ Please sign up first!
       },
     },
     ja: {
-      title: '',
+      title: '足立花火大会',
       content: `7月20日は足立花火大会が開催される。
 一緒に花火を見に行きたいひとはこちらのフォームをご記入！
 `,
@@ -207,7 +207,7 @@ Please sign up first!
   {
     date: '2019.10.16',
     'zh-TW': {
-      title: '東京國立博物館留學生日',
+      title: '東京國立博物館 - 留學生日',
       content: `2019年11月3日(星期日)為東京國立博物館留學生日，留學生可免費入館參觀。
 詳情可見官網
 有興趣的同學務必不要錯過！`,
@@ -216,7 +216,7 @@ Please sign up first!
       },
     },
     en: {
-      title: 'Tokyo National Museum international student discount information',
+      title: 'Tokyo National Museum - International student discount day',
       content: `Don’t miss out on the international student discount day here at the Tokyo National Museum. Free entrance fee for international students on this day.
 Please refer to the official website for more details.`,
       links: {
@@ -224,7 +224,7 @@ Please refer to the official website for more details.`,
       },
     },
     ja: {
-      title: '',
+      title: '東京国立博物館 - 留学生の日',
       content: `2019年11月3日は東京国立博物館の留学生の日。留学生は無料で入館できる。
 詳しい情報はオフィシャルサイトをご覧ください
 興味がある方は是非このチャンスを見逃さないように。`,
