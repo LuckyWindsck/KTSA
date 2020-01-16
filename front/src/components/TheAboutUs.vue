@@ -9,26 +9,26 @@
           alt=""
         />
       </figure>
-      <h1>
-        團體概要
-      </h1>
-      <p>
-        慶應義塾大學台灣留學生會(Keio Taiwanese Student Association, KTSA)
-        是集結在慶應6個校區的台灣人所成立的學生組織。
-      </p>
-      <h1>
-        團體宗旨
-      </h1>
-      <p>
-        讓慶應台灣人交流認識、協助大家在日生活，並定期舉辦各種精彩活動讓會員能夠交到新朋友且更融入日本生活。
-      </p>
+      <article v-for="([title, content], i) in aboutUs" :key="i">
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+      </article>
     </article>
   </section>
 </template>
 
 <script>
-export default {
+import aboutUs from '@/config/about-us';
 
+export default {
+  computed: {
+    aboutUs() {
+      return Object.entries(aboutUs[this.$store.state.i18n.locale]);
+    },
+  },
+  mounted() {
+    console.log(this.aboutUs);
+  },
 };
 </script>
 
