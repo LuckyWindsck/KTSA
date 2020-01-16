@@ -4,16 +4,20 @@
       <img class="logo-image" :src="this.$images.HOME.Logo" alt="KTSA logo" />
     </div>
     <h1 class="logo-caption">
-      <!-- <span class="logo-caption-block">慶應台灣人留學生會</span> -->
-      <span class="logo-caption-block">Keio Taiwanese </span>
-      <span class="logo-caption-block">Student Association</span>
+      <pre class="logo-caption-ktsaname">{{ ktsaName }}</pre>
     </h1>
   </section>
 </template>
 
 <script>
-export default {
+import settings from '@/config/settings';
 
+export default {
+  computed: {
+    ktsaName() {
+      return settings.ktsa.name[this.$store.state.i18n.locale];
+    },
+  },
 };
 </script>
 
@@ -40,7 +44,7 @@ export default {
   /* disable chrome user agent stylesheet */
   margin-block: 0;
 }
-.logo-caption-block {
-  display: block;
+.logo-caption-ktsaname {
+  font-size: 1.25rem;
 }
 </style>

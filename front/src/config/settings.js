@@ -7,6 +7,11 @@ const settings = {
     changeInterval: 3000,
   },
   ktsa: {
+    name: {
+      'zh-TW': '慶應台灣人留學生會',
+      en: 'Keio Taiwanese\nStudent Association',
+      ja: '慶應台湾人留学生会',
+    },
     contacts: {
       facebook: {
         url: 'https://www.facebook.com/keiotaiwan/',
