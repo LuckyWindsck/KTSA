@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="slideshow">
     <div class="slide-container">
       <div class="slide">
         <img class="slide-image" :src="slideSrc" />
@@ -89,6 +89,13 @@ export default {
 </script>
 
 <style scoped>
+.slideshow {
+  display: grid;
+
+  grid-template-rows: 20fr 3fr;
+
+  @mixin ktsa_section;
+}
 .slide-container {
   position: relative;
 }
