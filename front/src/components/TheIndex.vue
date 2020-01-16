@@ -21,7 +21,8 @@ export default {
   background: var(--KTSA-bg-layout);
 }
 .layout {
-  margin: 0 15vh;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .main {
   display: grid;
