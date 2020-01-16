@@ -1,5 +1,5 @@
 const state = {
-  locale: sessionStorage.getItem('locale'),
+  locale: sessionStorage.getItem('locale') || 'zh-TW',
   locales: {
     'zh-TW': '中文',
     en: 'English',
