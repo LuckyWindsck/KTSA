@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <section>
+  <footer class="footer">
+    <section class="footer-section">
       <address>
         <a class="footer-link" :href="`mailto:${this.mail}`">{{ this.mail }}</a>
       </address>
@@ -30,6 +30,20 @@ export default {
 </script>
 
 <style scoped>
+.footer {
+  width: 100%;
+
+  text-align: center;
+
+  background-color: var(--KTSA-bg-blue);
+}
+.footer-section {
+  display: inline-block;
+
+  padding: 2.5rem;
+
+  text-align: left;
+}
 .footer-link {
   color: var(--KTSA-fg-blue);
 
