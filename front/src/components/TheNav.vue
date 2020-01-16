@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="nav">
     <div class="nav-row" v-for="([url, text], i) in this.nav" :key="i">
       <router-link class="nav-link" :to="url">{{ text }}</router-link>
     </div>
@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style scoped>
+.nav {
+  @mixin ktsa_section;
+}
 .nav-link {
   text-decoration: none;
 }

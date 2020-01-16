@@ -4,7 +4,7 @@
       <the-nav class="navigation" />
       <ktsa-locale />
     </div>
-    <router-view class="main-router-view" />
+    <router-view />
   </main>
 </template>
 
@@ -27,12 +27,5 @@ export default {
 .main-side {
   position: sticky;
   top: 0.5rem;
-}
-.navigation {
-  grid-column: 1;
-  @mixin ktsa_section;
-}
-.main-router-view {
-  grid-column: 2;
 }
 </style>
