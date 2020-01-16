@@ -17,7 +17,7 @@ module.exports = {
         ktsa_section() {
           return {
             border: `0.2rem solid ${variables['--KTSA-fg-blue']}`,
-            'box-shadow': `0px 0px 0.5rem ${variables['--KTSA-bg-caption']}`,
+            'box-shadow': `0 0 0.5rem ${variables['--KTSA-bg-caption']}`,
           };
         },
         ktsa_page_title() {
