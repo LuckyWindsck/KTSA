@@ -30,10 +30,12 @@ export default {
   margin-bottom: 1em;
 
   grid-template-rows: 20fr 3fr;
+
   @mixin ktsa_section;
 }
 .home-news {
   overflow: auto;
+
   @mixin ktsa_section;
 }
 .home-aside {

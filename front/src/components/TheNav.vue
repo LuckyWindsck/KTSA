@@ -31,14 +31,17 @@ export default {
   background-color: var(--KTSA-bg-blue);
 
   font-weight: bold;
+
   @mixin ktsa_nav 1, false;
 }
 .nav-row:nth-child(2n + 2) {
   background-color: var(--KTSA-bg-layout);
+
   @mixin ktsa_nav;
 }
 .nav-row:nth-child(2n + 3) {
   background-color: var(--KTSA-bg-yellow);
+
   @mixin ktsa_nav;
 }
 .nav-row:nth-child(n + 2) .nav-link.router-link-active,
