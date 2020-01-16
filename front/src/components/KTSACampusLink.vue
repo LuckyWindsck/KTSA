@@ -1,7 +1,5 @@
 <template>
-  <li>
-    <a :href="campusUrl">{{ campusName }}</a>
-  </li>
+  <a :href="campusUrl">{{ campusName }}</a>
 </template>
 
 <script>
