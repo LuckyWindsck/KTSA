@@ -17,9 +17,7 @@ export default {
         [{ name: 'members' }, 'MEMBERS'],
         [{ name: 'events' }, 'EVENTS'],
         [{ name: 'contact' }, 'CONTACT'],
-        // [{ name: 'admin' }, 'ADMIN'],
       ],
-      // .slice(0, process.env.NODE_ENV === 'development' ? undefined : -1),
     };
   },
 };
