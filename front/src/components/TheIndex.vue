@@ -3,7 +3,7 @@
     <div class="layout">
       <the-header />
       <the-main class="main" />
-      <the-footer class="footer" />
+      <the-footer />
     </div>
   </div>
 </template>
@@ -33,14 +33,5 @@ export default {
 
   grid-template-columns: 3fr 9fr;
   grid-column-gap: 1rem;
-}
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2.5em;
-
-  background-color: var(--KTSA-bg-blue);
 }
 </style>
