@@ -1,24 +1,8 @@
 <template>
-  <main>
+  <main class="main">
     <div class="main-side">
       <the-nav class="navigation" />
-      <div class="locales">
-        [
-        <span
-          :class="zhTW ? 'currentLocale' : ''"
-          @click="changeLocale('zh-TW')"
-          >中文</span
-        >
-        /
-        <span :class="en ? 'currentLocale' : ''" @click="changeLocale('en')"
-          >English</span
-        >
-        /
-        <span :class="ja ? 'currentLocale' : ''" @click="changeLocale('ja')"
-          >日文</span
-        >
-        ]
-      </div>
+      <ktsa-locale />
     </div>
     <router-view class="main-router-view" />
   </main>
@@ -26,26 +10,20 @@
 
 <script>
 export default {
-  computed: {
-    zhTW() {
-      return this.$store.state.i18n.locale === 'zh-TW';
-    },
-    en() {
-      return this.$store.state.i18n.locale === 'en';
-    },
-    ja() {
-      return this.$store.state.i18n.locale === 'ja';
-    },
-  },
-  methods: {
-    changeLocale(locale) {
-      this.$store.commit('i18n/changeLocale', locale);
-    },
-  },
 };
 </script>
 
 <style scoped>
+.main {
+  display: grid;
+
+  padding: 0.5rem;
+
+  background-color: var(--KTSA-bg-layout);
+
+  grid-template-columns: 3fr 9fr;
+  grid-column-gap: 1rem;
+}
 .main-side {
   position: sticky;
   top: 0.5rem;
@@ -54,17 +32,7 @@ export default {
   grid-column: 1;
   @mixin ktsa_section;
 }
-.locales {
-  margin: 1.5em auto;
-
-  text-align: center;
-
-  font-size: 1.5em;
-}
 .main-router-view {
   grid-column: 2;
-}
-.currentLocale {
-  text-decoration: underline;
 }
 </style>
