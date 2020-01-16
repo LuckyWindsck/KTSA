@@ -19,6 +19,6 @@ export default {
 .invitation-link {
   width: 100%;
 
-  border-radius: 1em;
+  border-radius: 1rem;
 }
 </style>

@@ -1,21 +1,14 @@
 <template>
   <section>
     <section class="campus-section">
-      <ul class="campus-link-list">
-        <ktsa-campus-link
-          v-for="(campus, i) in this.campuses"
-          :key="i"
-          :campus="campus"
-          class="campus-link"
-        />
-      </ul>
+      <div v-for="(campus, i) in this.campuses" :key="i">
+        <ktsa-campus-link :campus="campus" />
+      </div>
     </section>
     <section class="invitation-section">
-      <ktsa-invitation-link
-        v-for="(contact, i) in this.contacts"
-        :key="i"
-        :contact="contact"
-      />
+      <div v-for="(contact, i) in this.contacts" :key="i">
+        <ktsa-invitation-link :contact="contact" />
+      </div>
     </section>
   </section>
 </template>
@@ -48,27 +41,15 @@ export default {
 
 <style scoped>
 .campus-section {
-  flex-direction: column;
+  display: grid;
 
-  padding: 1rem 0;
+  margin: 1.5rem 0;
 
   font-size: 1.5rem;
-  line-height: 1.5em;
-}
-.campus-link-list {
-  margin-left: -1.5em;
-
-  list-style: none;
-}
-.campus-link {
-  text-decoration: none;
 }
 .invitation-section {
-  flex-direction: column;
+  display: grid;
 
   padding: 0 1rem;
-
-  font-size: 1.25rem;
-  line-height: 1.5em;
 }
 </style>
