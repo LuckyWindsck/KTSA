@@ -27,22 +27,6 @@ export default {
 .nav {
   @mixin ktsa_section;
 }
-.nav-link {
-  text-decoration: none;
-}
-
-.nav-link:before {
-  display: inline-block;
-
-  width: 1em;
-
-  content: "\2022";
-
-  color: black;
-
-  font-weight: bold;
-}
-
 .nav-row:nth-child(1) {
   background-color: var(--KTSA-bg-blue);
 
@@ -57,9 +41,22 @@ export default {
   background-color: var(--KTSA-bg-yellow);
   @mixin ktsa_nav;
 }
-
 .nav-row:nth-child(n + 2) .nav-link.router-link-active,
 .nav-row:nth-child(n + 2) .nav-link.router-link-active:before {
   color: var(--KTSA-fg-red);
+}
+.nav-link {
+  text-decoration: none;
+}
+.nav-link:before {
+  display: inline-block;
+
+  width: 1rem;
+
+  content: "\2022";
+
+  color: black;
+
+  font-weight: bold;
 }
 </style>

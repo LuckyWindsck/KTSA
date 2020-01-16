@@ -38,7 +38,7 @@ module.exports = {
         ktsa_nav(mixin, padLeft = 2, border = 'true') {
           const css = {
             'padding-left': `${Number(padLeft)}rem`,
-            'line-height': '3em',
+            'line-height': '4.5rem',
             'font-size': '1.5rem',
           };
           if (border === 'true') {
