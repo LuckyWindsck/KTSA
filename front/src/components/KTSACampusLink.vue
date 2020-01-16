@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import settings from '@/config/settings';
-
 export default {
   props: {
     campus: {
@@ -17,7 +15,7 @@ export default {
       return this.campus.url;
     },
     campusName() {
-      return this.campus.name[settings.locale];
+      return this.campus.name[this.$store.state.i18n.locale];
     },
   },
 };

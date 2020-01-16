@@ -14,26 +14,26 @@
 </template>
 
 <script>
-import settings from '@/config/settings';
+import campuses from '@/config/campuses';
 
 export default {
   data() {
     return {
-      contacts: {
-        facebook: {
-          url: 'https://www.facebook.com/keiotaiwan/',
-          image: this.$images.HOME.facebook[settings.locale],
-        },
-        line: {
-          url: 'https://linecorp.com/',
-          image: this.$images.HOME.line[settings.locale],
-        },
-      },
+      campuses,
     };
   },
   computed: {
-    campuses() {
-      return settings.campuses;
+    contacts() {
+      return {
+        facebook: {
+          url: 'https://www.facebook.com/keiotaiwan/',
+          image: this.$images.HOME.facebook[this.$store.state.i18n.locale],
+        },
+        line: {
+          url: 'https://linecorp.com/',
+          image: this.$images.HOME.line[this.$store.state.i18n.locale],
+        },
+      };
     },
   },
 };

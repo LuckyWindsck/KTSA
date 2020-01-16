@@ -13,18 +13,18 @@
 </template>
 
 <script>
-import settings from '@/config/settings';
+import members from '@/config/members';
 
 export default {
   computed: {
     members() {
-      const rows = Math.max(...settings.members.map(({ row }) => row)) + 1;
-      const cols = Math.max(...settings.members.map(({ col }) => col)) + 1;
+      const rows = Math.max(...members.map(({ row }) => row)) + 1;
+      const cols = Math.max(...members.map(({ col }) => col)) + 1;
       const findMember = (member, row, col) => member.row === row && member.col === col;
 
       return Array(rows).fill()
         .map((_, row) => Array(cols).fill()
-          .map((_, col) => settings.members.find((member) => findMember(member, row, col))));
+          .map((_, col) => members.find((member) => findMember(member, row, col))));
     },
   },
 };
