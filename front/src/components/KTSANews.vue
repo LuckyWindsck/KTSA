@@ -5,9 +5,12 @@
     <figure class="news-figure">
       <img class="news-image" :src="src" alt="" />
     </figure>
-    <p class="news-content" v-for="(line, i) in content.split('\n')" :key="i">
-      {{ line }}
-    </p>
+    <p
+      class="news-content"
+      v-for="(line, i) in content"
+      :key="i"
+      v-html="line"
+    ></p>
   </article>
 </template>
 
@@ -21,17 +24,23 @@ export default {
     };
   },
   computed: {
-    content() {
-      return this.news[this.locale].content;
+    localeNews() {
+      return this.news[this.$store.state.i18n.locale];
     },
-    locale() {
-      return this.$store.state.i18n.locale;
+    title() {
+      return this.localeNews.title;
+    },
+    content() {
+      let { content } = this.localeNews;
+      const links = this.localeNews.links || {};
+      Object.entries(links)
+        .forEach(([name, href]) => {
+          content = content.replace(name, `<a href="${href}">${name}</a>`);
+        });
+      return content.split('\n');
     },
     src() {
       return this.$images.NEWS[this.news.date.replace(/\./g, '')];
-    },
-    title() {
-      return this.news[this.locale].title;
     },
   },
 };
