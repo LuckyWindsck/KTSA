@@ -1,5 +1,7 @@
+import settings from '@/config/settings';
+
 const state = {
-  locale: sessionStorage.getItem('locale') || 'zh-TW',
+  locale: sessionStorage.getItem('locale') || settings.locale,
   locales: {
     'zh-TW': '中文',
     en: 'English',

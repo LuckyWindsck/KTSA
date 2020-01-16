@@ -2,7 +2,7 @@ export default {
   axios: {
     baseURL: 'https://keiotaiwan.org',
   },
-  locale: 'zh_tw',
+  locale: 'zh-TW',
   slideshow: {
     changeInterval: 3000,
   },
