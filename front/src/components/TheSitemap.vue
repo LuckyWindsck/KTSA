@@ -41,6 +41,9 @@ export default {
   @mixin ktsa_page_title;
 }
 .sitemap-content {
+  font-size: 1.5em;
+  line-height: 2em;
+
   @mixin ktsa_page_content;
 }
 </style>
