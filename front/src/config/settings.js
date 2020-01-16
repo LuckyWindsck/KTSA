@@ -1,4 +1,4 @@
-export default {
+const settings = {
   axios: {
     baseURL: 'https://keiotaiwan.org',
   },
@@ -52,3 +52,5 @@ export default {
     },
   ],
 };
+
+export default settings;
