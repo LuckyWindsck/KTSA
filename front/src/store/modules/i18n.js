@@ -1,5 +1,10 @@
 const state = {
   locale: sessionStorage.getItem('locale'),
+  locales: {
+    'zh-TW': '中文',
+    en: 'English',
+    ja: '日本語',
+  },
 };
 
 const mutations = {

@@ -30,5 +30,6 @@ module.exports = {
   rules: {
     'no-console': ['warn', { allow: ['log'] }],
     'no-shadow': ['error', { allow: ['_'] }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
   },
 };
