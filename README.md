@@ -1,5 +1,7 @@
 # KTSA
 
+This project is no longer maintained. (Archived)
+
 ## Introduction
 Previous official homepage of KEIO Taiwanese Student Association (慶應義塾大学台湾留学生会).
 
