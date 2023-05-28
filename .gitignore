@@ -1,1 +1,6 @@
-.DS_Store
+node_modules/
+dist/
+src/images/
+src/config/events.js
+src/config/members.js
+src/config/news.js
